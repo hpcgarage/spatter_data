@@ -23,5 +23,6 @@ rm -f tmp1.txt tmp2.txt
 
 echo omp.txt:
 cat omp.txt
+echo
 echo scalar.txt:
 cat scalar.txt
