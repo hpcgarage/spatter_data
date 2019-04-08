@@ -1,0 +1,429 @@
+LSB Version:	:core-4.1-noarch:core-4.1-ppc64le
+Distributor ID:	RedHatEnterpriseServer
+Description:	Red Hat Enterprise Linux Server release 7.6 (Maipo)
+Release:	7.6
+Codename:	Maipo
+Linux newell2. 4.14.0-115.el7a.ppc64le #1 SMP Tue Sep 25 12:28:39 EDT 2018 ppc64le ppc64le ppc64le GNU/Linux
++ lscpu
+Architecture:          ppc64le
+Byte Order:            Little Endian
+CPU(s):                128
+On-line CPU(s) list:   0-127
+Thread(s) per core:    4
+Core(s) per socket:    16
+Socket(s):             2
+NUMA node(s):          6
+Model:                 2.2 (pvr 004e 1202)
+Model name:            POWER9, altivec supported
+CPU max MHz:           3800.0000
+CPU min MHz:           2300.0000
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              512K
+L3 cache:              10240K
+NUMA node0 CPU(s):     0-63
+NUMA node8 CPU(s):     64-127
+NUMA node252 CPU(s):   
+NUMA node253 CPU(s):   
+NUMA node254 CPU(s):   
+NUMA node255 CPU(s):   
+MemTotal:       329857152 kB
+MemFree:        326147776 kB
+MemAvailable:   325901888 kB
+Buffers:               0 kB
+Cached:           781440 kB
+SwapCached:        30784 kB
+Active:           509760 kB
+Inactive:         393344 kB
+Active(anon):     109440 kB
+Inactive(anon):    74560 kB
+Active(file):     400320 kB
+Inactive(file):   318784 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       4194240 kB
+SwapFree:        3522240 kB
+Dirty:               320 kB
+Writeback:             0 kB
+AnonPages:        110016 kB
+Mapped:            78208 kB
+Shmem:             62208 kB
+Slab:            1564416 kB
+SReclaimable:     237440 kB
+SUnreclaim:      1326976 kB
+KernelStack:       21456 kB
+PageTables:        11968 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    169122816 kB
+Committed_AS:     728512 kB
+VmallocTotal:   549755813888 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+ShmemHugePages:        0 kB
+ShmemPmdMapped:        0 kB
+CmaTotal:       13434880 kB
+CmaFree:        13434816 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+System:
+  Host: newell2. Kernel: 4.14.0-115.el7a.ppc64le ppc64le 
+  bits: 64 Console: N/A 
+  Distro: Red Hat Enterprise Linux Server release 7.6 (Maipo) 
+Machine:
+  Type: PowerPC Device System: 8335-GTH details: PowerNV 8335-GTH 
+  rev: 2.2 (pvr 004e 1202) 
+CPU:
+  Topology: 128-Core model: POWER9 altivec supported bits: 64 type: MCP 
+  L2 cache: N/A 
+  Speed: 3800 MHz min/max: 2300/3800 MHz Core speeds (MHz): 1: 3800 2: 3800 
+  3: 3800 4: 3800 5: 3800 6: 3800 7: 3800 8: 3800 9: 3800 10: 3800 11: 3800 
+  12: 3800 13: 3800 14: 3800 15: 3800 16: 3800 17: 3800 18: 3800 19: 3800 
+  20: 3800 21: 3800 22: 3800 23: 3800 24: 3800 25: 3800 26: 3800 27: 3800 
+  28: 3800 29: 3800 30: 3800 31: 3800 32: 3800 33: 3800 34: 3800 35: 3800 
+  36: 3800 37: 3800 38: 3800 39: 3800 40: 3800 41: 3800 42: 3800 43: 3800 
+  44: 3800 45: 3800 46: 3800 47: 3800 48: 3800 49: 3800 50: 3800 51: 3800 
+  52: 3800 53: 3800 54: 3800 55: 3800 56: 3800 57: 3800 58: 3800 59: 3800 
+  60: 3800 61: 3800 62: 3800 63: 3800 64: 3800 65: 3800 66: 3800 67: 3800 
+  68: 3800 69: 3800 70: 3800 71: 3800 72: 3800 73: 3800 74: 3800 75: 3800 
+  76: 3800 77: 3800 78: 3800 79: 3800 80: 3800 81: 3800 82: 3800 83: 3800 
+  84: 3800 85: 3800 86: 3800 87: 3800 88: 3800 89: 3800 90: 3800 91: 3800 
+  92: 3800 93: 3800 94: 3800 95: 3800 96: 3800 97: 3800 98: 3800 99: 3800 
+  100: 3800 101: 3800 102: 3800 103: 3800 104: 3800 105: 3800 106: 3800 
+  107: 3800 108: 3800 109: 3800 110: 3800 111: 3800 112: 3800 113: 3800 
+  114: 3800 115: 3800 116: 3800 117: 3800 118: 3800 119: 3800 120: 3800 
+  121: 3800 122: 3800 123: 3800 124: 3800 125: 3800 126: 3800 127: 3800 
+  128: 3800 
+Graphics:
+  Device-1: ASPEED Graphics Family driver: ast v: kernel 
+  Device-2: NVIDIA GV100GL [Tesla V100 SXM2 32GB] driver: nvidia v: 418.39 
+  Device-3: NVIDIA GV100GL [Tesla V100 SXM2 32GB] driver: nvidia v: 418.39 
+  Display: server: No display server data found. Headless machine? 
+  tty: 80x24 
+  Message: Unable to show advanced data. Required tool glxinfo missing. 
+Audio:
+  Message: No Device data found. 
+Network:
+  Device-1: Mellanox MT28800 Family [ConnectX-5 Ex] driver: mlx5_core 
+  Device-2: Mellanox MT28800 Family [ConnectX-5 Ex] driver: mlx5_core 
+  Device-3: Broadcom and subsidiaries NetXtreme BCM5719 Gigabit Ethernet PCIe driver: tg3 
+  IF: enP5p1s0f0 state: up speed: 1000 Mbps duplex: full 
+  mac: 08:94:ef:80:70:7b 
+  Device-4: Broadcom and subsidiaries NetXtreme BCM5719 Gigabit Ethernet PCIe driver: tg3 
+  IF: enP5p1s0f1 state: up speed: 1000 Mbps duplex: full 
+  mac: 08:94:ef:80:70:7c 
+  Device-5: IBM type: network bridge driver: ibmnpu 
+  Device-6: IBM type: network bridge driver: ibmnpu 
+  Device-7: IBM type: network bridge driver: ibmnpu 
+  Device-8: IBM type: network bridge driver: ibmnpu 
+  Device-9: IBM type: network bridge driver: ibmnpu 
+  Device-10: IBM type: network bridge driver: ibmnpu 
+  Device-11: IBM type: network bridge driver: ibmnpu 
+  Device-12: IBM type: network bridge driver: ibmnpu 
+  Device-13: IBM type: network bridge driver: ibmnpu 
+  Device-14: IBM type: network bridge driver: ibmnpu 
+  Device-15: IBM type: network bridge driver: ibmnpu 
+  Device-16: IBM type: network bridge driver: ibmnpu 
+  Device-17: Mellanox MT28800 Family [ConnectX-5 Ex] driver: mlx5_core 
+  Device-18: Mellanox MT28800 Family [ConnectX-5 Ex] driver: mlx5_core 
+Drives:
+  Local Storage: total: 1.82 TiB used: 6.77 GiB (0.4%) 
+  ID-1: /dev/sda vendor: Seagate model: ST1000NX0313 00LY266 00LY265IBM 
+  size: 931.51 GiB 
+  ID-2: /dev/sdb vendor: Seagate model: ST1000NX0313 00LY266 00LY265IBM 
+  size: 931.51 GiB 
+Partition:
+  ID-1: / size: 49.98 GiB used: 5.88 GiB (11.8%) fs: xfs dev: /dev/dm-0 
+  ID-2: /boot size: 1014.0 MiB used: 224.2 MiB (22.1%) fs: xfs 
+  dev: /dev/sda2 
+  ID-3: /home size: 1.76 TiB used: 32.3 MiB (0.0%) fs: xfs dev: /dev/dm-2 
+  ID-4: swap-1 size: 4.00 GiB used: 656.2 MiB (16.0%) fs: swap 
+  dev: /dev/dm-1 
+Sensors:
+  Permissions: Unable to run ipmi sensors.  Root privileges required. 
+  Message: No sensors data was found. Is sensors configured? 
+Info:
+  Processes: 1180 Uptime: 26d 21h 40m Memory: 314.58 GiB 
+  used: 2.81 GiB (0.9%) Init: systemd runlevel: 3 Shell: sc19_collect_en 
+  inxi: 3.0.32 
+NAME          MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sdb             8:16   1 931.5G  0 disk 
+`-sdb1          8:17   1 931.5G  0 part 
+  `-rhel-home 253:2    0   1.8T  0 lvm  /home
+sda             8:0    1 931.5G  0 disk 
+|-sda2          8:2    1     1G  0 part /boot
+|-sda3          8:3    1 930.5G  0 part 
+| |-rhel-swap 253:1    0     4G  0 lvm  [SWAP]
+| |-rhel-home 253:2    0   1.8T  0 lvm  /home
+| `-rhel-root 253:0    0    50G  0 lvm  /
+`-sda1          8:1    1     4M  0 part 
+[0:0:0:0]    disk    ATA      ST1000NX0313     BE35  /dev/sda   1.00TB
+[1:0:0:0]    disk    ATA      ST1000NX0313     BE35  /dev/sdb   1.00TB
+./sc19_collect_environment.sh: line 30: module: command not found
+Sun Apr  7 20:55:10 2019       
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 418.39       Driver Version: 418.39       CUDA Version: 10.1     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  Tesla V100-SXM2...  On   | 00000004:04:00.0 Off |                    0 |
+| N/A   29C    P0    38W / 300W |      0MiB / 32480MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   1  Tesla V100-SXM2...  On   | 00000035:03:00.0 Off |                    0 |
+| N/A   29C    P0    37W / 300W |      0MiB / 32480MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|  No running processes found                                                 |
++-----------------------------------------------------------------------------+
+H/W path      Device      Class      Description
+================================================
+                          system     8335-GTH (ibm,witherspoon)
+/0                        bus        Motherboard
+/0/16                     processor  02CY212
+/0/16/0                   memory     32KiB L1 Cache (instruction)
+/0/16/1                   memory     32KiB L1 Cache (data)
+/0/16/2                   memory     512KiB L2 Cache (unified)
+/0/16/3                   memory     10MiB L3 Cache (unified)
+/0/20                     processor  02CY212
+/0/20/0                   memory     32KiB L1 Cache (instruction)
+/0/20/1                   memory     32KiB L1 Cache (data)
+/0/20/2                   memory     512KiB L2 Cache (unified)
+/0/20/3                   memory     10MiB L3 Cache (unified)
+/0/32                     processor  02CY212
+/0/32/0                   memory     32KiB L1 Cache (instruction)
+/0/32/1                   memory     32KiB L1 Cache (data)
+/0/32/2                   memory     512KiB L2 Cache (unified)
+/0/32/3                   memory     10MiB L3 Cache (unified)
+/0/36                     processor  02CY212
+/0/36/0                   memory     32KiB L1 Cache (instruction)
+/0/36/1                   memory     32KiB L1 Cache (data)
+/0/36/2                   memory     512KiB L2 Cache (unified)
+/0/36/3                   memory     10MiB L3 Cache (unified)
+/0/40                     processor  02CY212
+/0/40/0                   memory     32KiB L1 Cache (instruction)
+/0/40/1                   memory     32KiB L1 Cache (data)
+/0/40/2                   memory     512KiB L2 Cache (unified)
+/0/40/3                   memory     10MiB L3 Cache (unified)
+/0/44                     processor  02CY212
+/0/44/0                   memory     32KiB L1 Cache (instruction)
+/0/44/1                   memory     32KiB L1 Cache (data)
+/0/44/2                   memory     512KiB L2 Cache (unified)
+/0/44/3                   memory     10MiB L3 Cache (unified)
+/0/56                     processor  02CY212
+/0/56/0                   memory     32KiB L1 Cache (instruction)
+/0/56/1                   memory     32KiB L1 Cache (data)
+/0/56/2                   memory     512KiB L2 Cache (unified)
+/0/56/3                   memory     10MiB L3 Cache (unified)
+/0/60                     processor  02CY212
+/0/60/0                   memory     32KiB L1 Cache (instruction)
+/0/60/1                   memory     32KiB L1 Cache (data)
+/0/60/2                   memory     512KiB L2 Cache (unified)
+/0/60/3                   memory     10MiB L3 Cache (unified)
+/0/64                     processor  02CY212
+/0/64/0                   memory     32KiB L1 Cache (instruction)
+/0/64/1                   memory     32KiB L1 Cache (data)
+/0/64/2                   memory     512KiB L2 Cache (unified)
+/0/64/3                   memory     10MiB L3 Cache (unified)
+/0/68                     processor  02CY212
+/0/68/0                   memory     32KiB L1 Cache (instruction)
+/0/68/1                   memory     32KiB L1 Cache (data)
+/0/68/2                   memory     512KiB L2 Cache (unified)
+/0/68/3                   memory     10MiB L3 Cache (unified)
+/0/72                     processor  02CY212
+/0/72/0                   memory     32KiB L1 Cache (instruction)
+/0/72/1                   memory     32KiB L1 Cache (data)
+/0/72/2                   memory     512KiB L2 Cache (unified)
+/0/72/3                   memory     10MiB L3 Cache (unified)
+/0/76                     processor  02CY212
+/0/76/0                   memory     32KiB L1 Cache (instruction)
+/0/76/1                   memory     32KiB L1 Cache (data)
+/0/76/2                   memory     512KiB L2 Cache (unified)
+/0/76/3                   memory     10MiB L3 Cache (unified)
+/0/88                     processor  02CY212
+/0/88/0                   memory     32KiB L1 Cache (instruction)
+/0/88/1                   memory     32KiB L1 Cache (data)
+/0/88/2                   memory     512KiB L2 Cache (unified)
+/0/88/3                   memory     10MiB L3 Cache (unified)
+/0/92                     processor  02CY212
+/0/92/0                   memory     32KiB L1 Cache (instruction)
+/0/92/1                   memory     32KiB L1 Cache (data)
+/0/92/2                   memory     512KiB L2 Cache (unified)
+/0/92/3                   memory     10MiB L3 Cache (unified)
+/0/8                      processor  02CY212
+/0/8/0                    memory     32KiB L1 Cache (instruction)
+/0/8/1                    memory     32KiB L1 Cache (data)
+/0/8/2                    memory     512KiB L2 Cache (unified)
+/0/8/3                    memory     10MiB L3 Cache (unified)
+/0/2048                   processor  02CY212
+/0/2048/0                 memory     32KiB L1 Cache (instruction)
+/0/2048/1                 memory     32KiB L1 Cache (data)
+/0/2048/2                 memory     512KiB L2 Cache (unified)
+/0/2048/3                 memory     10MiB L3 Cache (unified)
+/0/2052                   processor  02CY212
+/0/2052/0                 memory     32KiB L1 Cache (instruction)
+/0/2052/1                 memory     32KiB L1 Cache (data)
+/0/2052/2                 memory     512KiB L2 Cache (unified)
+/0/2052/3                 memory     10MiB L3 Cache (unified)
+/0/2056                   processor  02CY212
+/0/2056/0                 memory     32KiB L1 Cache (instruction)
+/0/2056/1                 memory     32KiB L1 Cache (data)
+/0/2056/2                 memory     512KiB L2 Cache (unified)
+/0/2056/3                 memory     10MiB L3 Cache (unified)
+/0/2060                   processor  02CY212
+/0/2060/0                 memory     32KiB L1 Cache (instruction)
+/0/2060/1                 memory     32KiB L1 Cache (data)
+/0/2060/2                 memory     512KiB L2 Cache (unified)
+/0/2060/3                 memory     10MiB L3 Cache (unified)
+/0/2064                   processor  02CY212
+/0/2064/0                 memory     32KiB L1 Cache (instruction)
+/0/2064/1                 memory     32KiB L1 Cache (data)
+/0/2064/2                 memory     512KiB L2 Cache (unified)
+/0/2064/3                 memory     10MiB L3 Cache (unified)
+/0/2068                   processor  02CY212
+/0/2068/0                 memory     32KiB L1 Cache (instruction)
+/0/2068/1                 memory     32KiB L1 Cache (data)
+/0/2068/2                 memory     512KiB L2 Cache (unified)
+/0/2068/3                 memory     10MiB L3 Cache (unified)
+/0/2072                   processor  02CY212
+/0/2072/0                 memory     32KiB L1 Cache (instruction)
+/0/2072/1                 memory     32KiB L1 Cache (data)
+/0/2072/2                 memory     512KiB L2 Cache (unified)
+/0/2072/3                 memory     10MiB L3 Cache (unified)
+/0/2076                   processor  02CY212
+/0/2076/0                 memory     32KiB L1 Cache (instruction)
+/0/2076/1                 memory     32KiB L1 Cache (data)
+/0/2076/2                 memory     512KiB L2 Cache (unified)
+/0/2076/3                 memory     10MiB L3 Cache (unified)
+/0/2096                   processor  02CY212
+/0/2096/0                 memory     32KiB L1 Cache (instruction)
+/0/2096/1                 memory     32KiB L1 Cache (data)
+/0/2096/2                 memory     512KiB L2 Cache (unified)
+/0/2096/3                 memory     10MiB L3 Cache (unified)
+/0/2100                   processor  02CY212
+/0/2100/0                 memory     32KiB L1 Cache (instruction)
+/0/2100/1                 memory     32KiB L1 Cache (data)
+/0/2100/2                 memory     512KiB L2 Cache (unified)
+/0/2100/3                 memory     10MiB L3 Cache (unified)
+/0/2104                   processor  02CY212
+/0/2104/0                 memory     32KiB L1 Cache (instruction)
+/0/2104/1                 memory     32KiB L1 Cache (data)
+/0/2104/2                 memory     512KiB L2 Cache (unified)
+/0/2104/3                 memory     10MiB L3 Cache (unified)
+/0/2108                   processor  02CY212
+/0/2108/0                 memory     32KiB L1 Cache (instruction)
+/0/2108/1                 memory     32KiB L1 Cache (data)
+/0/2108/2                 memory     512KiB L2 Cache (unified)
+/0/2108/3                 memory     10MiB L3 Cache (unified)
+/0/2112                   processor  02CY212
+/0/2112/0                 memory     32KiB L1 Cache (instruction)
+/0/2112/1                 memory     32KiB L1 Cache (data)
+/0/2112/2                 memory     512KiB L2 Cache (unified)
+/0/2112/3                 memory     10MiB L3 Cache (unified)
+/0/2116                   processor  02CY212
+/0/2116/0                 memory     32KiB L1 Cache (instruction)
+/0/2116/1                 memory     32KiB L1 Cache (data)
+/0/2116/2                 memory     512KiB L2 Cache (unified)
+/0/2116/3                 memory     10MiB L3 Cache (unified)
+/0/2136                   processor  02CY212
+/0/2136/0                 memory     32KiB L1 Cache (instruction)
+/0/2136/1                 memory     32KiB L1 Cache (data)
+/0/2136/2                 memory     512KiB L2 Cache (unified)
+/0/2136/3                 memory     10MiB L3 Cache (unified)
+/0/2140                   processor  02CY212
+/0/2140/0                 memory     32KiB L1 Cache (instruction)
+/0/2140/1                 memory     32KiB L1 Cache (data)
+/0/2140/2                 memory     512KiB L2 Cache (unified)
+/0/2140/3                 memory     10MiB L3 Cache (unified)
+/0/12                     processor  02CY212
+/0/12/0                   memory     32KiB L1 Cache (instruction)
+/0/12/1                   memory     32KiB L1 Cache (data)
+/0/12/2                   memory     512KiB L2 Cache (unified)
+/0/12/3                   memory     10MiB L3 Cache (unified)
+/0/0                      memory     319GiB System memory
+/0/0/0                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/0/1                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/0/2                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/0/3                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/0/4                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/0/5                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/0/6                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/0/7                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/0/8                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/0/9                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/0/a                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/0/b                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/0/c                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/0/d                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/0/e                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/0/f                    memory     16GiB RDIMM DDR4 2666 MHz (0.4ns)
+/0/1                      generic    bmc-firmware-version
+/0/2                      generic    buildroot
+/0/3                      generic    capp-ucode
+/0/4                      generic    hcode
+/0/5                      generic    hostboot
+/0/6                      generic    hostboot-binaries
+/0/7                      generic    linux
+/0/9                      generic    machine-xml
+/0/a                      generic    occ
+/0/b                      generic    petitboot
+/0/c                      generic    sbe
+/0/d                      generic    skiboot
+/0/e                      generic    version
+/0/100                    bridge     POWER9 Host Bridge (PHB4)
+/0/101                    bridge     POWER9 Host Bridge (PHB4)
+/0/101/0                  bus        TUSB73x0 SuperSpeed USB 3.0 xHCI Host Controller
+/0/102                    bridge     POWER9 Host Bridge (PHB4)
+/0/102/0                  bridge     AST1150 PCI-to-PCI Bridge
+/0/102/0/0                display    ASPEED Graphics Family
+/0/103                    bridge     POWER9 Host Bridge (PHB4)
+/0/103/0                  network    MT28800 Family [ConnectX-5 Ex]
+/0/103/0.1                network    MT28800 Family [ConnectX-5 Ex]
+/0/104                    bridge     POWER9 Host Bridge (PHB4)
+/0/104/0                  bridge     PLX Technology, Inc.
+/0/104/0/2                bridge     PLX Technology, Inc.
+/0/104/0/2/0              storage    88SE9235 PCIe 2.0 x2 4-port SATA 6 Gb/s Controller
+/0/104/0/a                bridge     PLX Technology, Inc.
+/0/104/0/a/0              display    GV100GL [Tesla V100 SXM2 32GB]
+/0/104/0/b                bridge     PLX Technology, Inc.
+/0/104/0/c                bridge     PLX Technology, Inc.
+/0/104/0.1                generic    PLX Technology, Inc.
+/0/104/0.2                generic    PLX Technology, Inc.
+/0/104/0.3                generic    PLX Technology, Inc.
+/0/104/0.4                generic    PLX Technology, Inc.
+/0/105                    bridge     POWER9 Host Bridge (PHB4)
+/0/105/0      enP5p1s0f0  network    NetXtreme BCM5719 Gigabit Ethernet PCIe
+/0/105/0.1    enP5p1s0f1  network    NetXtreme BCM5719 Gigabit Ethernet PCIe
+/0/106                    bridge     IBM
+/0/107                    bridge     IBM
+/0/108                    bridge     IBM
+/0/109                    bridge     IBM
+/0/10a                    bridge     IBM
+/0/10b                    bridge     IBM
+/0/10c                    bridge     IBM
+/0/10d                    bridge     IBM
+/0/10e                    bridge     IBM
+/0/10f                    bridge     IBM
+/0/110                    bridge     IBM
+/0/111                    bridge     IBM
+/0/112                    bridge     POWER9 Host Bridge (PHB4)
+/0/113                    bridge     POWER9 Host Bridge (PHB4)
+/0/113/0                  network    MT28800 Family [ConnectX-5 Ex]
+/0/113/0.1                network    MT28800 Family [ConnectX-5 Ex]
+/0/114                    bridge     POWER9 Host Bridge (PHB4)
+/0/115                    bridge     POWER9 Host Bridge (PHB4)
+/0/115/0                  bridge     PLX Technology, Inc.
+/0/115/0/4                bridge     PLX Technology, Inc.
+/0/115/0/4/0              display    GV100GL [Tesla V100 SXM2 32GB]
+/0/115/0/5                bridge     PLX Technology, Inc.
+/0/115/0/d                bridge     PLX Technology, Inc.
