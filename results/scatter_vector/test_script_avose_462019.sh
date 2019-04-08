@@ -1,6 +1,27 @@
+#!/bin/bash -l
 #Quickly print out serial and vector results with strides
 
-for s in 1 2 4 8 16 32 64 128 ; do for((i=0;i<100;i++)) ; do numactl --cpunodebind=0 ./spatter -k gather -b serial --seed 1337 -l 4000000 -s $s 2>/dev/null | grep "GATHER COPY" | sort -nk 9 | tail -n 1 | cut -sd ' ' -f 9 ; done | sort -nk 1 | tail -n 1 ; done
+rm -f omp.txt
+rm -f scalar.txt
 
-for s in 1 2 4 8 16 32 64 128 ; do for((i=0;i<100;i++)) ; do OMP_NUM_THREADS=1 OMP_PROC_BIND=true OMP_PLACES="{0}" ./spatter -k gather -b OpenMP --seed 1337 -l 4000000 -s $s 2>/dev/null | grep "GATHER COPY" | sort -nk 10 | tail -n 1 | cut -sd ' ' -f 10 ; done | sort -nk 1 | tail -n 1 ; done
+export OMP_NUM_THREADS=1
 
+for s in 1 2 4 8 16 32 64 128;
+do
+        rm -f tmp1.txt tmp2.txt
+        for i in `seq 1 10`;
+        do
+                numactl --cpunodebind=0 ./spatter -b openmp -s $s -q -R 100 --no-print-header -l 4000000 | cut -d' ' -f10 >> tmp1.txt
+                numactl --cpunodebind=0 ./spatter -b serial -s $s -q -R 100 --no-print-header -l 4000000 | cut -d' ' -f9 >> tmp2.txt
+        done;
+        sort -nr tmp1.txt | head -n1 >> omp.txt
+        sort -nr tmp2.txt | head -n1 >> scalar.txt
+
+done;
+
+rm -f tmp1.txt tmp2.txt
+
+echo omp.txt:
+cat omp.txt
+echo scalar.txt:
+cat scalar.txt
