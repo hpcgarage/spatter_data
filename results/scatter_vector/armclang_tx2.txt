@@ -1,0 +1,24 @@
+#Note - vectorization failed with the following error:
+spatter/openmp/openmp_kernels.c:59:9: remark: loop not vectorized [-Rpass-missed=loop-vectorize]
+spatter/openmp/openmp_kernels.c:72:9: remark: loop not vectorized: could not determine number of loop iterations [-Rpass-analysis=loop-vectorize]
+#pragma omp parallel for schedule(runtime)
+
+
+omp.txt:
+9295.643887
+6983.761445
+4549.950638
+3046.708710
+2401.113937
+1900.482764
+1760.992583
+1638.520413
+scalar.txt:
+6615.419675
+4973.483304
+4233.220835
+3224.296796
+2632.208715
+2292.653329
+2308.985117
+2251.214530
