@@ -39,7 +39,7 @@ do
 	pr -w 180 -m -t tmp1.txt tmp2.txt >> tmp3.txt
 	#OMP_NUM_THREADS=1 likwid-pin -c N:0 ./spatter -l $amg_size -t ../traces/amg.pat -q --nph -R 20 | grep OPENMP | cut -f 10 -d' ' | sort -r | head -n 1 >> tmp2.txt
 done;
-cat tmp3.txt
+
 echo -n "NEKBONE $nekbone_size PAPI01 " >> $outfile
 cat tmp3.txt | sort -nrk10 | head -n 1 | cut -f 4,10,11,12 -d' ' >> $outfile
 
