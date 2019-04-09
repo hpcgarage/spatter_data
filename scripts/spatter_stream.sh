@@ -1,9 +1,9 @@
 #!/bin/bash
 
-cmd="icc -o new-stream stream.c -DSTREAM_ARRAY_SIZE=50000000 -Ofast -qopenmp"
+cmd="icc -o new-stream stream.c -DSTREAM_ARRAY_SIZE=70000000 -Ofast -qopenmp"
 
 echo "Compiling with \"${cmd}\""
-icc -o new-stream stream.c -DSTREAM_ARRAY_SIZE=50000000 -Ofast -qopenmp > /dev/null
+icc -o new-stream stream.c -DSTREAM_ARRAY_SIZE=70000000 -Ofast -qopenmp > /dev/null
 
 echo "1 thread: "
 OMP_NUM_THREADS=1 likwid-pin -c N:0 ./new-stream | grep -A 4 "Function"
