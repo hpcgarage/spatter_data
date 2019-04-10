@@ -1,5 +1,4 @@
 #!/bin/bash
-# Authors: Jeffrey Young, Patrick Lavin
 # Last Modified: October 11, 2018
 #This script runs the R plotting script on the commandline and places output with the data
 #Ex: ./generate_plots.sh openmp condesa-snb 18158 cpu
