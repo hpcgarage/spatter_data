@@ -1,4 +1,5 @@
 Intel(R) Xeon Phi(TM) CPU 7250 @ 1.40GHz
+(cache,quad)
 
 omp.txt:
 10934.614536
