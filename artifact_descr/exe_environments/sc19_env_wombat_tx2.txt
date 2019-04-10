@@ -1,0 +1,136 @@
+./sc19_collect_environment.sh: line 23: lsb_release: command not found
+Linux wombat 4.14.43-201.numa_patch.el7a.aarch64 #1 SMP Mon Dec 17 15:33:26 EST 2018 aarch64 aarch64 aarch64 GNU/Linux
++ lscpu
+Architecture:          aarch64
+Byte Order:            Little Endian
+CPU(s):                224
+On-line CPU(s) list:   0-223
+Thread(s) per core:    4
+Core(s) per socket:    28
+Socket(s):             2
+NUMA node(s):          2
+Model:                 0
+BogoMIPS:              400.00
+NUMA node0 CPU(s):     0-111
+NUMA node1 CPU(s):     112-223
+Flags:                 fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics cpuid asimdrdm
+MemTotal:       264039296 kB
+MemFree:        237667400 kB
+MemAvailable:   253637412 kB
+Buffers:               0 kB
+Cached:         21411280 kB
+SwapCached:            0 kB
+Active:          9317132 kB
+Inactive:       12939404 kB
+Active(anon):    2333584 kB
+Inactive(anon):  3251796 kB
+Active(file):    6983548 kB
+Inactive(file):  9687608 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 8 kB
+Writeback:             0 kB
+AnonPages:        845400 kB
+Mapped:           137316 kB
+Shmem:           4740120 kB
+Slab:            1871476 kB
+SReclaimable:    1056632 kB
+SUnreclaim:       814844 kB
+KernelStack:       38912 kB
+PageTables:         8508 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    132019648 kB
+Committed_AS:    7719376 kB
+VmallocTotal:   135290290112 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HardwareCorrupted:     0 kB
+CmaTotal:          65536 kB
+CmaFree:           64472 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+./sc19_collect_environment.sh: line 27: inxi: command not found
+NAME   MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+sdd      8:48   1         0 disk 
+sdb      8:16   1         0 disk 
+sr2     11:2    1  1024M  0 rom  
+sr0     11:0    1  1024M  0 rom  
+sde      8:64   1         0 disk 
+sdc      8:32   1         0 disk 
+sda      8:0    0 447.1G  0 disk 
+└─sda1   8:1    0 447.1G  0 part /scratch
+sr3     11:3    1  1024M  0 rom  
+sr1     11:1    1  1024M  0 rom  
+[2:0:0:0]    disk    ATA      VR000480GWEPR    HPG0  /dev/sda    480GB
+[4:0:0:0]    cd/dvd  AMI      Virtual CDROM0   1.00  /dev/sr0        -
+[4:0:0:1]    cd/dvd  AMI      Virtual CDROM1   1.00  /dev/sr1        -
+[4:0:0:2]    cd/dvd  AMI      Virtual CDROM2   1.00  /dev/sr2        -
+[4:0:0:3]    cd/dvd  AMI      Virtual CDROM3   1.00  /dev/sr3        -
+[5:0:0:0]    disk    AMI      Virtual Floppy0  1.00  /dev/sdb        -
+[5:0:0:1]    disk    AMI      Virtual Floppy1  1.00  /dev/sdc        -
+[5:0:0:2]    disk    AMI      Virtual Floppy2  1.00  /dev/sdd        -
+[5:0:0:3]    disk    AMI      Virtual Floppy3  1.00  /dev/sde        -
+++ /usr/bin/modulecmd bash list
+Currently Loaded Modulefiles:
+  1) Generic-AArch64/RHEL/7/gcc/8.2.0
+  2) Generic-AArch64/RHEL/7/arm-hpc-compiler/19.1
+  3) ThunderX2CN99/RHEL/7/arm-hpc-compiler-19.1/armpl/19.1.0
+  4) ARM_Compiler_For_HPC/19.1
+  5) Generic-AArch64/RHEL/7/gcc_runtimes/7.1.0
+  6) Generic-AArch64/RHEL/7/arm-instruction-emulator/18.4
+  7) ARM_Instruction_Emulator/18.4
+  8) cmake/3.11.1
+  9) numactl/2.0.11
++ eval
+./sc19_collect_environment.sh: line 31: nvidia-smi: command not found
+00:00.0 Host bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Host bridge
+00:01.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+00:02.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+00:03.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+00:04.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+00:05.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+00:06.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+00:07.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+00:08.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+00:09.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+00:0a.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+00:0b.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+00:0c.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+00:0d.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+00:0e.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+00:0f.0 USB controller: Broadcom Inc. and subsidiaries CN99xx [ThunderX2] Integrated USB 3.0 xHCI Host Controller
+00:0f.1 USB controller: Broadcom Inc. and subsidiaries CN99xx [ThunderX2] Integrated USB 3.0 xHCI Host Controller
+00:10.0 SATA controller: Broadcom Inc. and subsidiaries CN99xx [ThunderX2] Integrated AHCI/SATA 3 Host Controller
+00:10.1 SATA controller: Broadcom Inc. and subsidiaries CN99xx [ThunderX2] Integrated AHCI/SATA 3 Host Controller
+0a:00.0 Infiniband controller: Mellanox Technologies MT27700 Family [ConnectX-4]
+16:00.0 Ethernet controller: Mellanox Technologies MT27710 Family [ConnectX-4 Lx]
+16:00.1 Ethernet controller: Mellanox Technologies MT27710 Family [ConnectX-4 Lx]
+1d:00.0 PCI bridge: ASPEED Technology, Inc. AST1150 PCI-to-PCI Bridge (rev 04)
+1e:00.0 VGA compatible controller: ASPEED Technology, Inc. ASPEED Graphics Family (rev 41)
+80:00.0 Host bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Host bridge
+80:01.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+80:02.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+80:03.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+80:04.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+80:05.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+80:06.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+80:07.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+80:08.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+80:09.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+80:0a.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+80:0b.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+80:0c.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+80:0d.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+80:0e.0 PCI bridge: Cavium, Inc. CN99xx [ThunderX2] Integrated PCI Express RP Bridge
+80:0f.0 USB controller: Broadcom Inc. and subsidiaries CN99xx [ThunderX2] Integrated USB 3.0 xHCI Host Controller
+80:0f.1 USB controller: Broadcom Inc. and subsidiaries CN99xx [ThunderX2] Integrated USB 3.0 xHCI Host Controller
+80:10.0 SATA controller: Broadcom Inc. and subsidiaries CN99xx [ThunderX2] Integrated AHCI/SATA 3 Host Controller
+80:10.1 SATA controller: Broadcom Inc. and subsidiaries CN99xx [ThunderX2] Integrated AHCI/SATA 3 Host Controller
+92:00.0 Infiniband controller: Mellanox Technologies MT27700 Family [ConnectX-4]

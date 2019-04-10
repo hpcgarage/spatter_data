@@ -1,0 +1,13 @@
+Compiling with "icc -o new-stream stream.c -DSTREAM_ARRAY_SIZE=50000000 -Ofast -qopenmp"
+1 thread: 
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           17609.9     0.046307     0.045429     0.049206
+Scale:          17427.7     0.046355     0.045904     0.049745
+Add:            16779.9     0.072815     0.071514     0.075414
+Triad:          16782.8     0.071972     0.071502     0.075302
+24 Threads: 
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           87003.0     0.009318     0.009195     0.009500
+Scale:          85170.0     0.009496     0.009393     0.009606
+Add:            98864.0     0.012240     0.012138     0.012307
+Triad:          98821.3     0.012222     0.012143     0.012357

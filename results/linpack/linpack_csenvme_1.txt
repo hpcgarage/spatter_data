@@ -1,0 +1,48 @@
+This is a SAMPLE run script for running a shared-memory version of
+Intel(R) Distribution for LINPACK* Benchmark. Change it to reflect
+the correct number of CPUs/threads, problem input files, etc..
+*Other names and brands may be claimed as the property of others.
+Tue Apr  9 13:00:21 EDT 2019
+Sample data file lininput_xeon64.
+
+Current date/time: Tue Apr  9 13:00:21 2019
+
+CPU frequency:    3.690 GHz
+Number of CPUs: 2
+Number of cores: 12
+Number of threads: 1
+
+Parameters are set to:
+
+Number of tests: 15
+Number of equations to solve (problem size) : 1000  2000  5000  10000 15000 18000 20000 22000 25000 26000 27000 30000 35000 40000 45000
+Leading dimension of array                  : 1000  2000  5008  10000 15000 18008 20016 22008 25000 26000 27000 30000 35000 40000 45000
+Number of trials to run                     : 4     2     2     2     2     2     2     2     2     2     1     1     1     1     1    
+Data alignment value (in Kbytes)            : 4     4     4     4     4     4     4     4     4     4     4     1     1     1     1    
+
+Maximum memory requested that can be used=16200901024, at the size=45000
+
+=================== Timing linear equation system solver ===================
+
+Size   LDA    Align. Time(s)    GFlops   Residual     Residual(norm) Check
+1000   1000   4      0.014      48.8112  1.026013e-12 3.498967e-02   pass
+1000   1000   4      0.013      53.0399  1.026013e-12 3.498967e-02   pass
+1000   1000   4      0.013      53.0008  1.026013e-12 3.498967e-02   pass
+1000   1000   4      0.013      52.7427  1.026013e-12 3.498967e-02   pass
+2000   2000   4      0.112      47.8962  4.692288e-12 4.081716e-02   pass
+2000   2000   4      0.111      47.9517  4.692288e-12 4.081716e-02   pass
+5000   5008   4      1.075      77.5373  2.389867e-11 3.332477e-02   pass
+5000   5008   4      1.102      75.6756  2.389867e-11 3.332477e-02   pass
+10000  10000  4      8.084      82.4962  9.837997e-11 3.468977e-02   pass
+10000  10000  4      8.085      82.4810  9.837997e-11 3.468977e-02   pass
+15000  15000  4      24.306     92.5885  1.934144e-10 3.046309e-02   pass
+15000  15000  4      24.304     92.5947  1.934144e-10 3.046309e-02   pass
+18000  18008  4      41.315     94.1220  3.098239e-10 3.392952e-02   pass
+18000  18008  4      41.315     94.1225  3.098239e-10 3.392952e-02   pass
+20000  20016  4      56.467     94.4648  3.197234e-10 2.830252e-02   pass
+20000  20016  4      57.029     93.5337  3.197234e-10 2.830252e-02   pass
+22000  22008  4      75.600     93.9104  4.820419e-10 3.530767e-02   pass
+22000  22008  4      75.575     93.9421  4.820419e-10 3.530767e-02   pass
+25000  25000  4      110.462    94.3122  4.964064e-10 2.822885e-02   pass
+25000  25000  4      110.479    94.2978  4.964064e-10 2.822885e-02   pass
+[1;34m[likwid-pin] Main PID -> core 0 - OK[0m

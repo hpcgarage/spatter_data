@@ -1,0 +1,99 @@
+LSB Version:	n/a
+Distributor ID:	SUSE
+Description:	SUSE Linux Enterprise Server 15
+Release:	15
+Codename:	n/a
+Linux nid00132 4.12.14-25.22_5.0.70-cray_ari_c #1 SMP Tue Mar 5 00:08:48 UTC 2019 (bc16c54) aarch64 aarch64 aarch64 GNU/Linux
++ lscpu
+Architecture:        aarch64
+Byte Order:          Little Endian
+CPU(s):              256
+On-line CPU(s) list: 0-255
+Thread(s) per core:  4
+Core(s) per socket:  32
+Socket(s):           2
+NUMA node(s):        2
+Model:               2
+CPU max MHz:         2500.0000
+CPU min MHz:         1000.0000
+BogoMIPS:            400.00
+NUMA node0 CPU(s):   0-31,64-95,128-159,192-223
+NUMA node1 CPU(s):   32-63,96-127,160-191,224-255
+Flags:               fp asimd evtstrm aes pmull sha1 sha2 crc32 atomics cpuid asimdrdm
+MemTotal:       263988584 kB
+MemFree:        261311712 kB
+MemAvailable:   260690888 kB
+Buffers:          146420 kB
+Cached:           805772 kB
+SwapCached:            0 kB
+Active:           267460 kB
+Inactive:         709948 kB
+Active(anon):     104844 kB
+Inactive(anon):   110448 kB
+Active(file):     162616 kB
+Inactive(file):   599500 kB
+Unevictable:        2348 kB
+Mlocked:            2348 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:                 0 kB
+Writeback:             0 kB
+AnonPages:         27740 kB
+Mapped:            54572 kB
+Shmem:            190044 kB
+Slab:             378992 kB
+SReclaimable:      91916 kB
+SUnreclaim:       287076 kB
+KernelStack:       37184 kB
+PageTables:         1148 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    131994292 kB
+Committed_AS:     627264 kB
+VmallocTotal:   135290290112 kB
+VmallocUsed:           0 kB
+VmallocChunk:          0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+./sc19_collect_environment.sh: line 27: inxi: command not found
++ eval
+./sc19_collect_environment.sh: line 31: nvidia-smi: command not found
+00:00.0 Host bridge: Cavium, Inc. Device af00
+00:01.0 PCI bridge: Cavium, Inc. Device af84
+00:02.0 PCI bridge: Cavium, Inc. Device af84
+00:03.0 PCI bridge: Cavium, Inc. Device af84
+00:04.0 PCI bridge: Cavium, Inc. Device af84
+00:05.0 PCI bridge: Cavium, Inc. Device af84
+00:06.0 PCI bridge: Cavium, Inc. Device af84
+00:07.0 PCI bridge: Cavium, Inc. Device af84
+00:08.0 PCI bridge: Cavium, Inc. Device af84
+00:09.0 PCI bridge: Cavium, Inc. Device af84
+00:0a.0 PCI bridge: Cavium, Inc. Device af84
+00:0b.0 PCI bridge: Cavium, Inc. Device af84
+00:0c.0 PCI bridge: Cavium, Inc. Device af84
+00:0d.0 PCI bridge: Cavium, Inc. Device af84
+00:0e.0 PCI bridge: Cavium, Inc. Device af84
+00:0f.0 USB controller: Broadcom Limited Device 9026
+00:0f.1 USB controller: Broadcom Limited Device 9026
+00:10.0 SATA controller: Broadcom Limited Device 9027
+00:10.1 SATA controller: Broadcom Limited Device 9027
+01:00.0 Unclassified device [0002]: Cray Inc Device 0301 (rev 30)
+01:00.1 Unclassified device [0002]: Cray Inc Device 0301 (rev 30)
+01:00.2 Unclassified device [0002]: Cray Inc Device 0301 (rev 30)
+01:00.3 Unclassified device [0002]: Cray Inc Device 0301 (rev 30)
+80:00.0 Host bridge: Cavium, Inc. Device af00
+80:01.0 PCI bridge: Cavium, Inc. Device af84
+80:05.0 PCI bridge: Cavium, Inc. Device af84
+80:06.0 PCI bridge: Cavium, Inc. Device af84
+80:07.0 PCI bridge: Cavium, Inc. Device af84
+80:08.0 PCI bridge: Cavium, Inc. Device af84
+80:09.0 PCI bridge: Cavium, Inc. Device af84
+80:0a.0 PCI bridge: Cavium, Inc. Device af84
+80:0f.0 USB controller: Broadcom Limited Device 9026
+80:0f.1 USB controller: Broadcom Limited Device 9026
+80:10.0 SATA controller: Broadcom Limited Device 9027
+80:10.1 SATA controller: Broadcom Limited Device 9027
