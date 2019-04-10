@@ -1,6 +1,6 @@
 #!/bin/bash
-# Author: Patrick Lavin
-# Yes I know this script looks like garbage. But it was written at midnight 48 hours before a paper dealine. 
+
+#Trace to run the proxy G/S app traces with Spatter (discussed in Section 5.3 of the paper)
 
 make > /dev/null
 

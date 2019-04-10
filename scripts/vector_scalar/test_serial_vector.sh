@@ -1,5 +1,5 @@
 #!/bin/bash
-#Update of Aaron's script using likwid-pin instead of numactl
+#Update of a previous script using likwid-pin instead of numactl
     rm -f omp.txt
     rm -f scalar.txt
 

@@ -1,5 +1,4 @@
 #!/bin/bash
-# Authors: Jeffrey Young, Patrick Lavin
 # Last Modified: October 11, 2018
 #This script organizes data into the correct results directories
 

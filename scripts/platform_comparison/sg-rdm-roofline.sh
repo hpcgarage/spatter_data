@@ -1,4 +1,3 @@
-# Authors: Jeffrey Young, Patrick Lavin
 # Last Modified: April 8, 2019
 # Create the data for a roofline mode with various sparsities
 
