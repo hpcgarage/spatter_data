@@ -1,0 +1,246 @@
+AMG
+===
+((16, 0, 8, -10664, 8, 8, 272, 8, 8, 272, 8, 8, 9776, 8, 8, 272, 16, 272), 'cnt 1454647  pct: 85.7251%  cum: 85.7251%')
+((16, 0, 8, -10664, 8, 280, 8, 280, 8, 9784, 8, 280, 288, 8, 9784, 8, 280, 8), 'cnt 41594  pct: 2.4512%  cum: 88.1763%')
+[...]
+Totals: (amg-large_t0.trc)
+  Insts:         1678622387
+  Types[]:        300776292 (SCALAR_LOAD)
+  Types[]:         52105439 (SCALAR_STORE)
+  Types[]:          4152084 (SVE_LOAD)
+  Types[]:          1016051 (SVE_STORE)
+  Types[]:        211077415 (BRANCH)
+  Types[]:          1700970 (SVE_GATHER)
+  Types[]:                0 (SVE_SCATTER)
+  Types[]:         49738339 (NEON_LOAD)
+  Types[]:         38255590 (NEON_STORE)
+  Types[]:            34825 (NEON_LOAD_LARGE)
+  Types[]:            33698 (NEON_STORE_LARGE)
+  Types[]:           175979 (UNKNOWN)
+Filter: hypre_CSRMatrixMatvecOutOfPlace
+  Insts:          271766353
+  GSInsts:          1696875 (0.006244)
+  Bytes:         1415930560
+  GSBytes:        217200000 (0.153397)
+  Types[]:         57152032 (SCALAR_LOAD)
+  Types[]:          2433167 (SCALAR_STORE)
+  Types[]:          3589126 (SVE_LOAD)
+  Types[]:           195376 (SVE_STORE)
+  Types[]:         24833089 (BRANCH)
+  Types[]:          1696875 (SVE_GATHER)
+  Types[]:                0 (SVE_SCATTER)
+  Types[]:          2435230 (NEON_LOAD)
+  Types[]:              270 (NEON_STORE)
+  Types[]:                0 (NEON_LOAD_LARGE)
+  Types[]:                0 (NEON_STORE_LARGE)
+  Types[]:                0 (UNKNOWN)
+
+
+Nekbone
+=======
+((16, 0, 24, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48), 'cnt 982980  pct: 33.3333%  cum: 33.3333%')
+((16, 0, -8, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48), 'cnt 982980  pct: 33.3333%  cum: 66.6667%')
+((16, 0, -40, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48, 48), 'cnt 491490  pct: 16.6667%  cum: 83.3333%')
+[...]
+Totals: (/lus/scratch/avose/gs_traces/sage_traces//nekbone_30i_t0.trc)
+  Insts:          932837166
+  Types[]:        118955071 (SCALAR_LOAD)
+  Types[]:         29527370 (SCALAR_STORE)
+  Types[]:         37428298 (SVE_LOAD)
+  Types[]:         15947965 (SVE_STORE)
+  Types[]:         61754308 (BRANCH)
+  Types[]:          2961240 (SVE_GATHER)
+  Types[]:            27328 (SVE_SCATTER)
+  Types[]:         16967766 (NEON_LOAD)
+  Types[]:         16250163 (NEON_STORE)
+  Types[]:           785513 (NEON_LOAD_LARGE)
+  Types[]:           785354 (NEON_STORE_LARGE)
+  Types[]:            39915 (UNKNOWN)
+Filter: ax__cray$mt$p0009
+  Insts:           30271686
+  GSInsts:          2948940 (0.097416)
+  Bytes:         1139003728
+  GSBytes:        377464320 (0.331399)
+  Types[]:           238383 (SCALAR_LOAD)
+  Types[]:             7860 (SCALAR_STORE)
+  Types[]:          3440462 (SVE_LOAD)
+  Types[]:          2457466 (SVE_STORE)
+  Types[]:           574295 (BRANCH)
+  Types[]:          2948940 (SVE_GATHER)
+  Types[]:                0 (SVE_SCATTER)
+  Types[]:             2400 (NEON_LOAD)
+  Types[]:              120 (NEON_STORE)
+  Types[]:                0 (NEON_LOAD_LARGE)
+  Types[]:                0 (NEON_STORE_LARGE)
+  Types[]:                0 (UNKNOWN)
+
+
+PENNANT
+=======
+((16, 0, 16, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32), 'cnt 162012  pct: 2.7482%  cum: 2.7482%')
+((16, 0, -16, 32, 32, -96, 160, 32, 32, -96, 160, 32, 32, -96, 160, 32, 32, -96), 'cnt 162012  pct: 2.7482%  cum: 5.4964%')
+((16, 0, 4147264, -48, 16, 16, 80, -48, 16, 16, 80, -48, 16, 16, 80, -48, 16, 16), 'cnt 161944  pct: 2.7470%  cum: 8.2434%')
+((16, 0, 16, 3856, -16, -3856, 32, 3856, -16, -3856, 32, 3856, -16, -3856, 32, 3856, -16, -3856), 'cnt 161940  pct: 2.7470%  cum: 10.9903%')
+((16, 0, -16, 16, 3856, -16, -3840, 16, 3856, -16, -3840, 16, 3856, -16, -3840, 16, 3856, -16), 'cnt 161900  pct: 2.7463%  cum: 13.7366%')
+((16, 0, 3856, -3856, 16, 3856, 0, -3856, 16, 3856, 0, -3856, 16, 3856, 0, -3856, 16, 3856), 'cnt 161900  pct: 2.7463%  cum: 16.4829%')
+((16, 1, 8, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32, 32), 'cnt 161900  pct: 2.7463%  cum: 19.2292%')
+((16, 0, -3110784, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0), 'cnt 121500  pct: 2.0610%  cum: 21.2902%')
+((16, 0, 3110784, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0), 'cnt 81032  pct: 1.3745%  cum: 22.6647%')
+((16, 0, 32, 32, 32, -96, 160, 32, 32, -96, 160, 32, 32, -96, 160, 32, 32, -96), 'cnt 81006  pct: 1.3741%  cum: 24.0388%')
+((16, 0, -15059072, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0), 'cnt 80994  pct: 1.3739%  cum: 25.4127%')
+((16, 0, -4147264, -48, 16, 16, 80, -48, 16, 16, 80, -48, 16, 16, 80, -48, 16, 16), 'cnt 80972  pct: 1.3735%  cum: 26.7862%')
+((16, 0, 8294528, -48, 16, 16, 80, -48, 16, 16, 80, -48, 16, 16, 80, -48, 16, 16), 'cnt 80972  pct: 1.3735%  cum: 28.1597%')
+((16, 0, 3840, -3856, 16, 3856, 0, -3856, 16, 3856, 0, -3856, 16, 3856, 0, -3856, 16, 3856), 'cnt 80970  pct: 1.3735%  cum: 29.5332%')
+((16, 0, 1036864, -12, 4, 4, 20, -12, 4, 4, 20, -12, 4, 4, 20, -12, 4, 4), 'cnt 80950  pct: 1.3731%  cum: 30.9063%')
+((16, 0, 32, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0), 'cnt 79697  pct: 1.3519%  cum: 32.2582%')
+((16, 0, 3110816, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0), 'cnt 79674  pct: 1.3515%  cum: 33.6097%')
+[...]
+Gathers:     5571446
+Scatters:    323800
+Totals: (/lus/scratch/avose/gs_traces/sage_traces//pennant-huge_t1.trc)
+  Insts:          878075900
+  Types[]:        108935007 (SCALAR_LOAD)
+  Types[]:         43716777 (SCALAR_STORE)
+  Types[]:          5663937 (SVE_LOAD)
+  Types[]:          3580539 (SVE_STORE)
+  Types[]:         48720678 (BRANCH)
+  Types[]:          5587954 (SVE_GATHER)
+  Types[]:           324100 (SVE_SCATTER)
+  Types[]:         50550142 (NEON_LOAD)
+  Types[]:         11366115 (NEON_STORE)
+  Types[]:            93154 (NEON_LOAD_LARGE)
+  Types[]:            92115 (NEON_STORE_LARGE)
+  Types[]:          4313993 (UNKNOWN)
+Filter: _ZN5Hydro7doCycleEd
+  Insts:          105165848
+  GSInsts:           728814 (0.006930)
+  Bytes:          686314336
+  GSBytes:         93288192 (0.135926)
+  Types[]:         10963813 (SCALAR_LOAD)
+  Types[]:          2603768 (SCALAR_STORE)
+  Types[]:          1866292 (SVE_LOAD)
+  Types[]:           750971 (SVE_STORE)
+  Types[]:          1796305 (BRANCH)
+  Types[]:           728814 (SVE_GATHER)
+  Types[]:                0 (SVE_SCATTER)
+  Types[]:          8443772 (NEON_LOAD)
+  Types[]:              315 (NEON_STORE)
+  Types[]:                0 (NEON_LOAD_LARGE)
+  Types[]:                0 (NEON_STORE_LARGE)
+  Types[]:                0 (UNKNOWN)
+Filter: _ZN4Mesh12calcSurfVecsEPK7double2S2_PS0_ii
+  Insts:            3523055
+  GSInsts:           324064 (0.091984)
+  Bytes:          105442720
+  GSBytes:         41480192 (0.393391)
+  Types[]:           162032 (SCALAR_LOAD)
+  Types[]:             1270 (SCALAR_STORE)
+  Types[]:           162032 (SVE_LOAD)
+  Types[]:           324064 (SVE_STORE)
+  Types[]:            44318 (BRANCH)
+  Types[]:           324064 (SVE_GATHER)
+  Types[]:                0 (SVE_SCATTER)
+  Types[]:             3810 (NEON_LOAD)
+  Types[]:             1270 (NEON_STORE)
+  Types[]:                0 (NEON_LOAD_LARGE)
+  Types[]:                0 (NEON_STORE_LARGE)
+  Types[]:                0 (UNKNOWN)
+Filter: _ZN3QCS8setForceEPKdPK7double2PdPS2_ii
+  Insts:            8214276
+  GSInsts:           891066 (0.108478)
+  Bytes:          251040024
+  GSBytes:        114056448 (0.454336)
+  Types[]:           178522 (SCALAR_LOAD)
+  Types[]:             1270 (SCALAR_STORE)
+  Types[]:           566952 (SVE_LOAD)
+  Types[]:           485976 (SVE_STORE)
+  Types[]:            65827 (BRANCH)
+  Types[]:           891066 (SVE_GATHER)
+  Types[]:                0 (SVE_SCATTER)
+  Types[]:             7620 (NEON_LOAD)
+  Types[]:             7620 (NEON_STORE)
+  Types[]:                0 (NEON_LOAD_LARGE)
+  Types[]:                0 (NEON_STORE_LARGE)
+  Types[]:                0 (UNKNOWN)
+Filter: _ZN3QCS11setQCnForceEPKdS1_S1_P7double2ii
+  Insts:            9565122
+  GSInsts:          1538118 (0.160805)
+  Bytes:          306044056
+  GSBytes:        196879104 (0.643303)
+  Types[]:           412472 (SCALAR_LOAD)
+  Types[]:             1270 (SCALAR_STORE)
+  Types[]:           728686 (SVE_LOAD)
+  Types[]:            80984 (SVE_STORE)
+  Types[]:            87317 (BRANCH)
+  Types[]:          1214318 (SVE_GATHER)
+  Types[]:           323800 (SVE_SCATTER)
+  Types[]:            88570 (NEON_LOAD)
+  Types[]:             6350 (NEON_STORE)
+  Types[]:                0 (NEON_LOAD_LARGE)
+  Types[]:                0 (NEON_STORE_LARGE)
+  Types[]:                0 (UNKNOWN)
+
+
+LULESH
+======
+((16, 1, 0, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192), 'cnt 577806  pct: 16.5727%  cum: 16.5727%')
+((16, 0, 8, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64), 'cnt 231198  pct: 6.6312%  cum: 23.2039%')
+((16, 1, 8, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64), 'cnt 167805  pct: 4.8130%  cum: 28.0169%')
+((16, 1, 64, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192), 'cnt 128002  pct: 3.6714%  cum: 31.6883%')
+((16, 0, 32, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192), 'cnt 96360  pct: 2.7638%  cum: 34.4521%')
+((16, 0, -32, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192), 'cnt 96360  pct: 2.7638%  cum: 37.2159%')
+((16, 0, -8, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192), 'cnt 96186  pct: 2.7588%  cum: 39.9747%')
+((16, 1, 8, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192), 'cnt 88011  pct: 2.5243%  cum: 42.4991%')
+((16, 0, -8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8), 'cnt 76794  pct: 2.2026%  cum: 44.7017%')
+((16, 0, 328, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8), 'cnt 76794  pct: 2.2026%  cum: 46.9043%')
+((16, 0, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8, 8), 'cnt 76794  pct: 2.2026%  cum: 49.1069%')
+((16, 0, 8, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192, 192), 'cnt 72270  pct: 2.0729%  cum: 51.1798%')
+[...]
+Totals: (/lus/scratch/avose/gs_traces/sage_traces//lulesh-mpi_t0.trc)
+  Insts:         1089934033
+  Types[]:        191026452 (SCALAR_LOAD)
+  Types[]:         87105963 (SCALAR_STORE)
+  Types[]:          3926265 (SVE_LOAD)
+  Types[]:          1455707 (SVE_STORE)
+  Types[]:         64285886 (BRANCH)
+  Types[]:          2395996 (SVE_GATHER)
+  Types[]:          1537113 (SVE_SCATTER)
+  Types[]:         21786035 (NEON_LOAD)
+  Types[]:         17125037 (NEON_STORE)
+  Types[]:            10157 (NEON_LOAD_LARGE)
+  Types[]:           138129 (NEON_STORE_LARGE)
+  Types[]:            68862 (UNKNOWN)
+Filter: _ZN27_INTERNAL_4499670d_c9d4bd8723IntegrateStressForElemsER6DomainPdS2_S2_S2_ii$$CFE_id_4499670d_c9d4bd87_cray$mt$p0002
+  Insts:           38610062
+  GSInsts:          1210824 (0.031360)
+  Bytes:          698324424
+  GSBytes:        154985472 (0.221939)
+  Types[]:          4828873 (SCALAR_LOAD)
+  Types[]:           441526 (SCALAR_STORE)
+  Types[]:          2949310 (SVE_LOAD)
+  Types[]:           821619 (SVE_STORE)
+  Types[]:           791044 (BRANCH)
+  Types[]:           828168 (SVE_GATHER)
+  Types[]:           382656 (SVE_SCATTER)
+  Types[]:           696821 (NEON_LOAD)
+  Types[]:            63710 (NEON_STORE)
+  Types[]:                0 (NEON_LOAD_LARGE)
+  Types[]:                0 (NEON_STORE_LARGE)
+  Types[]:                0 (UNKNOWN)
+Filter: _ZN27_INTERNAL_4499670d_c9d4bd8723InitStressTermsForElemsER6DomainPdS2_S2_i$$CFE_id_4499670d_c9d4bd87_cray$mt$p0001
+  Insts:           12827183
+  GSInsts:          2275671 (0.177410)
+  Bytes:          432069448
+  GSBytes:        291285888 (0.674165)
+  Types[]:           104116 (SCALAR_LOAD)
+  Types[]:            36025 (SCALAR_STORE)
+  Types[]:           761155 (SVE_LOAD)
+  Types[]:           312445 (SVE_STORE)
+  Types[]:           160058 (BRANCH)
+  Types[]:          1121844 (SVE_GATHER)
+  Types[]:          1153827 (SVE_SCATTER)
+  Types[]:            36050 (NEON_LOAD)
+  Types[]:            24023 (NEON_STORE)
+  Types[]:                0 (NEON_LOAD_LARGE)
+  Types[]:                0 (NEON_STORE_LARGE)
+  Types[]:                0 (UNKNOWN)
