@@ -1,0 +1,1 @@
+[{'count':2**24, 'kernel':['Gather', 'Scatter'], 'pattern':["UNIFORM:{}:{}:NR".format(2**V, 2**STRIDE) for V in range(3,11) for STRIDE in range(8)], 'local-work-size':[2**i for i in range(4,11)]}]
