@@ -6,7 +6,7 @@ elem      = 8   #bytes
 veclen    = 8   #elem
 data      = []
 
-memory    = 16 * (1000 ** 3) #16 GB
+memory    = 8 * (1000 ** 3) #8 GB
 
 count = 0
 for num in range(1,9):
