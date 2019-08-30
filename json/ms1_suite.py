@@ -1,6 +1,5 @@
 import ms1
 import json
-import pandas as pd
 
 cacheline = 128 #bytes
 elem      = 8   #bytes
