@@ -46,6 +46,7 @@ def main(dict_string):
                     change = True
                     dat = dat + tmp
                     break
+
     print(json.dumps(dat))
 
 if __name__ == "__main__":
