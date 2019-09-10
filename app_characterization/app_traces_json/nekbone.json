@@ -1,0 +1,1 @@
+[{"pattern": [0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6], "delta": 3, "kernel": "Gather", "count": 982980}, {"pattern": [0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6], "delta": -1, "kernel": "Gather", "count": 982980}, {"pattern": [0, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6, 6], "delta": -5, "kernel": "Gather", "count": 491490}]
