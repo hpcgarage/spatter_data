@@ -1,0 +1,21 @@
+
+Running Spatter version 0.0
+Compiler: Clang ver. 7.1.0
+Compiler Location: /sw/wombat/ARM_Compiler/19.2/opt/arm/arm-hpc-compiler-19.2_Generic-AArch64_RHEL-7_aarch64-1/bin/armclang
+Backend: OPENMP
+Aggregate Results? YES
+
+Run Configurations
+[ {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,6,12,18,24,30,36,42,48,54,60,66,72,78,84,90], 'delta':3, 'length':982980, 'agg':10, 'wrap':1, 'threads':112},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,6,12,18,24,30,36,42,48,54,60,66,72,78,84,90], 'delta':8, 'length':982980, 'agg':10, 'wrap':1, 'threads':112},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,6,12,18,24,30,36,42,48,54,60,66,72,78,84,90], 'delta':8, 'length':491490, 'agg':10, 'wrap':1, 'threads':112} ]
+
+config  time(s)      bw(MB/s)    
+0       0.003463     36335       
+1       0.001487     84640.1     
+2       0.0007981    78830.3     
+
+Min          25%          Med          75%          Max         
+36335        36335        78830.3      84640.1      84640.1     
+H.Mean       H.StdErr    
+57668        13839.4     
