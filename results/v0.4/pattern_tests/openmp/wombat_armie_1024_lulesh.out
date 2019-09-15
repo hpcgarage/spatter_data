@@ -1,0 +1,39 @@
+
+Running Spatter version 0.0
+Compiler: Clang ver. 7.1.0
+Compiler Location: /sw/wombat/ARM_Compiler/19.2/opt/arm/arm-hpc-compiler-19.2_Generic-AArch64_RHEL-7_aarch64-1/bin/armclang
+Backend: OPENMP
+Aggregate Results? YES
+
+Run Configurations
+[ {'name':'CUSTOM', 'kernel':'Scatter', 'pattern':[0,24,48,72,96,120,144,168,192,216,240,264,288,312,336,360], 'delta':0, 'length':577806, 'agg':10, 'wrap':1, 'threads':224},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,8,16,24,32,40,48,56,64,72,80,88,96,104,112,120], 'delta':1, 'length':231198, 'agg':10, 'wrap':1, 'threads':224},
+  {'name':'CUSTOM', 'kernel':'Scatter', 'pattern':[0,8,16,24,32,40,48,56,64,72,80,88,96,104,112,120], 'delta':1, 'length':167805, 'agg':10, 'wrap':1, 'threads':224},
+  {'name':'CUSTOM', 'kernel':'Scatter', 'pattern':[0,24,48,72,96,120,144,168,192,216,240,264,288,312,336,360], 'delta':8, 'length':128002, 'agg':10, 'wrap':1, 'threads':224},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,24,48,72,96,120,144,168,192,216,240,264,288,312,336,360], 'delta':4, 'length':96360, 'agg':10, 'wrap':1, 'threads':224},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,24,48,72,96,120,144,168,192,216,240,264,288,312,336,360], 'delta':8, 'length':96360, 'agg':10, 'wrap':1, 'threads':224},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,24,48,72,96,120,144,168,192,216,240,264,288,312,336,360], 'delta':8, 'length':96186, 'agg':10, 'wrap':1, 'threads':224},
+  {'name':'CUSTOM', 'kernel':'Scatter', 'pattern':[0,24,48,72,96,120,144,168,192,216,240,264,288,312,336,360], 'delta':1, 'length':88011, 'agg':10, 'wrap':1, 'threads':224},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], 'delta':8, 'length':76794, 'agg':10, 'wrap':1, 'threads':224},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], 'delta':41, 'length':76794, 'agg':10, 'wrap':1, 'threads':224},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], 'delta':1, 'length':76794, 'agg':10, 'wrap':1, 'threads':224},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,24,48,72,96,120,144,168,192,216,240,264,288,312,336,360], 'delta':1, 'length':72270, 'agg':10, 'wrap':1, 'threads':224} ]
+
+config  time(s)      bw(MB/s)    
+0       0.12         616.333     
+1       0.022        1345.05     
+2       0.01882      1141.46     
+3       0.008602     1904.76     
+4       0.006459     1909.69     
+5       0.006448     1912.75     
+6       0.01316      935.848     
+7       0.01498      751.983     
+8       0.01226      801.476     
+9       0.01134      867.137     
+10      0.01211      811.726     
+11      0.01021      905.907     
+
+Min          25%          Med          75%          Max         
+616.333      811.726      935.848      1904.76      1912.75     
+H.Mean       H.StdErr    
+1004.3       99.8628     
