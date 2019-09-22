@@ -1,0 +1,19 @@
+
+Running Spatter version 0.0
+Compiler: SPAT_C_NAME ver. 19.0.0.20190206
+Compiler Location: /usr/local/pace-apps/spack/packages/0.12/1-rhel7-x86_64/gcc-4.8.5/intel-parallel-studio-cluster.2019.3-3npq5qw6ri66bcpqgwzpeqjiqaddmlkl/bin/icc
+Backend: OPENMP
+Aggregate Results? YES
+
+Run Configurations
+[ {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[1333,0,1,2,36,37,38,72,73,74,1296,1297,1298,1332,1334,1368], 'delta':1, 'length':1454647, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[1333,0,1,36,37,72,73,1296,1297,1332,1368,1369,2592,2593,2628,2629], 'delta':1, 'length':1454647, 'agg':10, 'wrap':1, 'threads':24} ]
+
+config  time(s)      bw(MB/s)    
+0       0.002324     80106.8     
+1       0.002321     80231.6     
+
+Min          25%          Med          75%          Max         
+80106.8      80106.8      80231.6      80231.6      80231.6     
+H.Mean       H.StdErr    
+80169.1      44.1052     

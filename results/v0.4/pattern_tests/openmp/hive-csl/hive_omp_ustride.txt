@@ -1,0 +1,47 @@
+
+Running Spatter version 0.0
+Compiler: SPAT_C_NAME ver. 19.0.0.20190206
+Compiler Location: /usr/local/pace-apps/spack/packages/0.12/1-rhel7-x86_64/gcc-4.8.5/intel-parallel-studio-cluster.2019.3-3npq5qw6ri66bcpqgwzpeqjiqaddmlkl/bin/icc
+Backend: OPENMP
+Aggregate Results? YES
+
+Run Configurations
+[ {'name':'UNIFORM:8:1:NR', 'kernel':'Scatter', 'pattern':[0,1,2,3,4,5,6,7], 'delta':8, 'length':250000000, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'UNIFORM:8:2:NR', 'kernel':'Scatter', 'pattern':[0,2,4,6,8,10,12,14], 'delta':16, 'length':125000000, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'UNIFORM:8:4:NR', 'kernel':'Scatter', 'pattern':[0,4,8,12,16,20,24,28], 'delta':32, 'length':62500000, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'UNIFORM:8:8:NR', 'kernel':'Scatter', 'pattern':[0,8,16,24,32,40,48,56], 'delta':64, 'length':31250000, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'UNIFORM:8:16:NR', 'kernel':'Scatter', 'pattern':[0,16,32,48,64,80,96,112], 'delta':128, 'length':15625000, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'UNIFORM:8:32:NR', 'kernel':'Scatter', 'pattern':[0,32,64,96,128,160,192,224], 'delta':256, 'length':7812500, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'UNIFORM:8:64:NR', 'kernel':'Scatter', 'pattern':[0,64,128,192,256,320,384,448], 'delta':512, 'length':3906250, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'UNIFORM:8:128:NR', 'kernel':'Scatter', 'pattern':[0,128,256,384,512,640,768,896], 'delta':1024, 'length':1953125, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'UNIFORM:8:1:NR', 'kernel':'Gather', 'pattern':[0,1,2,3,4,5,6,7], 'delta':8, 'length':250000000, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'UNIFORM:8:2:NR', 'kernel':'Gather', 'pattern':[0,2,4,6,8,10,12,14], 'delta':16, 'length':125000000, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'UNIFORM:8:4:NR', 'kernel':'Gather', 'pattern':[0,4,8,12,16,20,24,28], 'delta':32, 'length':62500000, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'UNIFORM:8:8:NR', 'kernel':'Gather', 'pattern':[0,8,16,24,32,40,48,56], 'delta':64, 'length':31250000, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'UNIFORM:8:16:NR', 'kernel':'Gather', 'pattern':[0,16,32,48,64,80,96,112], 'delta':128, 'length':15625000, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'UNIFORM:8:32:NR', 'kernel':'Gather', 'pattern':[0,32,64,96,128,160,192,224], 'delta':256, 'length':7812500, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'UNIFORM:8:64:NR', 'kernel':'Gather', 'pattern':[0,64,128,192,256,320,384,448], 'delta':512, 'length':3906250, 'agg':10, 'wrap':1, 'threads':24},
+  {'name':'UNIFORM:8:128:NR', 'kernel':'Gather', 'pattern':[0,128,256,384,512,640,768,896], 'delta':1024, 'length':1953125, 'agg':10, 'wrap':1, 'threads':24} ]
+
+config  time(s)      bw(MB/s)    
+0       0.3308       48371       
+1       0.3283       24368.5     
+2       0.3287       12168       
+3       0.328        6097.32     
+4       0.242        4131.55     
+5       0.16         3125.98     
+6       0.1126       2220.21     
+7       0.05139      2432.44     
+8       0.2325       68808.7     
+9       0.1653       48391       
+10      0.1444       27696.2     
+11      0.1417       14110       
+12      0.1177       8496.43     
+13      0.06523      7664.6      
+14      0.03793      6591.86     
+15      0.01896      6593.28     
+
+Min          25%          Med          75%          Max         
+2220.21      6097.32      8496.43      27696.2      68808.7     
+H.Mean       H.StdErr    
+6597.74      1452.06     
