@@ -1,0 +1,40 @@
+#STREAM run with flags from Intel's Parallel Research Kernels. Note that the max size is smaller
+#because otherwise relocation errors occur when linking. This should still be larger than cache.
+make
+icc -O3 -pthread -O3 -qopenmp -DVERBOSE=0 -DMAXTHREADS=24 -DRESTRICT_KEYWORD=0 -DSTREAM_ARRAY_SIZE=20000000 -DNTIMES=100   -c -o mysecond.o mysecond.c
+icc -O3 -pthread -O3 -qopenmp -DVERBOSE=0 -DMAXTHREADS=24 -DRESTRICT_KEYWORD=0 -DSTREAM_ARRAY_SIZE=20000000 -DNTIMES=100 -c mysecond.c
+gfortran -O3 -fopenmp -c stream.f
+gfortran -O3 -fopenmp stream.o mysecond.o -o stream_f.exe
+icc -O3 -pthread -O3 -qopenmp -DVERBOSE=0 -DMAXTHREADS=24 -DRESTRICT_KEYWORD=0 -DSTREAM_ARRAY_SIZE=20000000 -DNTIMES=100 stream.c -o stream_c.exe
+[jyoung9@atl1-1-01-011-10-l STREAM]$ ./stream_c.exe
+-------------------------------------------------------------
+STREAM version $Revision: 5.10 $
+-------------------------------------------------------------
+This system uses 8 bytes per array element.
+-------------------------------------------------------------
+Array size = 20000000 (elements), Offset = 0 (elements)
+Memory per array = 152.6 MiB (= 0.1 GiB).
+Total memory required = 457.8 MiB (= 0.4 GiB).
+Each kernel will be executed 100 times.
+ The *best* time for each kernel (excluding the first iteration)
+ will be used to compute the reported bandwidth.
+-------------------------------------------------------------
+Number of Threads requested = 24
+Number of Threads counted = 24
+-------------------------------------------------------------
+Your clock granularity/precision appears to be 1 microseconds.
+Each test below will take on the order of 9058 microseconds.
+   (= 9058 clock ticks)
+Increase the size of the arrays if this shows that
+you are not getting at least 20 clock ticks per test.
+-------------------------------------------------------------
+WARNING -- The above is only a rough guideline.
+For best results, please be sure you know the
+precision of your system timer.
+-------------------------------------------------------------
+Function    Best Rate MB/s  Avg time     Min time     Max time
+Copy:           81531.8     0.005402     0.003925     0.014771
+Scale:          89062.9     0.005237     0.003593     0.014981
+Add:            90978.6     0.006959     0.005276     0.019589
+Triad:          91955.1     0.006990     0.005220     0.019815
+-------------------------------------------------------------
