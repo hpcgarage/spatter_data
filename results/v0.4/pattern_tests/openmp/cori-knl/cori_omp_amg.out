@@ -1,0 +1,21 @@
+OMP: Warning #181: OMP_PROC_BIND: ignored because KMP_AFFINITY has been defined
+OMP: Warning #181: OMP_PLACES: ignored because KMP_AFFINITY has been defined
+
+Running Spatter version 0.0
+Compiler: SPAT_C_NAME ver. 19.0.0.20190206
+Compiler Location: /opt/intel/compilers_and_libraries_2019.3.199/1/bin/intel64/icc
+Backend: OPENMP
+Aggregate Results? YES
+
+Run Configurations
+[ {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[1333,0,1,2,36,37,38,72,73,74,1296,1297,1298,1332,1334,1368], 'delta':1, 'length':1454647, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[1333,0,1,36,37,72,73,1296,1297,1332,1368,1369,2592,2593,2628,2629], 'delta':1, 'length':1454647, 'agg':10, 'wrap':1, 'threads':272} ]
+
+config  time(s)      bw(MB/s)    
+0       0.0009248    201344      
+1       0.0009251    201270      
+
+Min          25%          Med          75%          Max         
+201270       201270       201344       201344       201344      
+H.Mean       H.StdErr    
+201307       26.0859     
