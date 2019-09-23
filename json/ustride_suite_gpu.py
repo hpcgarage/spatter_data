@@ -6,13 +6,12 @@ elem = 8
 for kernel in ['Scatter', 'Gather']:
     for V in range(3, 11):
         for STRIDE in range(8):
-            for lws in range(4,11):
-                config ={}
-                delta = 2**V * 2**STRIDE
-                config['pattern'] = 'UNIFORM:{}:{}:NR'.format(2**V, 2**STRIDE)
-                config['kernel'] = kernel
-                config['count'] = memory // (delta*elem)
-                config['local-work-size'] = 2**lws
-                data.append(config)
+            config ={}
+            delta = 2**V * 2**STRIDE
+            config['pattern'] = 'UNIFORM:{}:{}:NR'.format(2**V, 2**STRIDE)
+            config['kernel'] = kernel
+            config['count'] = memory // (delta*elem)
+            config['local-work-size'] = 1024
+            data.append(config)
 
 print(json.dumps(data))
