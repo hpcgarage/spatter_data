@@ -1,0 +1,50 @@
+
+Running Spatter version 0.0
+Compiler: Cray ver. 9.1
+Compiler Location: /opt/cray/pe/craype/2.6.2.8/bin/cc
+Backend: OPENMP
+Aggregate Results? YES
+
+Run Configurations
+[ {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,4,8,12,16,20,24,28,32,36,40,44,48,52,56,60], 'delta':2, 'length':83333333, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[4,8,12,0,20,24,28,16,36,40,44,32,52,56,60,48], 'delta':2, 'length':83333333, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[6,0,2,4,14,8,10,12,22,16,18,20,30,24,26,28], 'delta':518408, 'length':482, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[2,484,482,0,4,486,484,2,6,488,486,4,8,490,488,6], 'delta':2, 'length':83333333, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,2,484,482,2,4,486,484,4,6,488,486,6,8,490,488], 'delta':2, 'length':83333333, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[482,0,2,484,484,2,4,486,486,4,6,488,488,6,8,490], 'delta':482, 'length':517598, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Scatter', 'pattern':[0,4,8,12,16,20,24,28,32,36,40,44,48,52,56,60], 'delta':1, 'length':125000000, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3], 'delta':388848, 'length':642, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3], 'delta':388848, 'length':642, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[4,8,12,0,20,24,28,16,36,40,44,32,52,56,60,48], 'delta':4, 'length':50000000, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3], 'delta':1882384, 'length':132, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[6,0,2,4,14,8,10,12,22,16,18,20,30,24,26,28], 'delta':518408, 'length':482, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[6,0,2,4,14,8,10,12,22,16,18,20,30,24,26,28], 'delta':1036816, 'length':241, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[482,0,2,484,484,2,4,486,486,4,6,488,488,6,8,490], 'delta':480, 'length':519750, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[2,0,0,0,2,0,0,0,2,0,0,0,2,0,0,0], 'delta':129608, 'length':1928, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3], 'delta':4, 'length':50000000, 'agg':10, 'wrap':1, 'threads':32},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3], 'delta':388852, 'length':642, 'agg':10, 'wrap':1, 'threads':32} ]
+
+config  time(s)      bw(MB/s)    
+0       0.04263      250188      
+1       0.04314      247256      
+2       3.2e-06      19280       
+3       0.04717      226123      
+4       0.04924      216627      
+5       0.001663     39833.4     
+6       0.0599       267107      
+7       3.3e-06      24901.8     
+8       3.25e-06     25284.9     
+9       0.03581      178737      
+10      3.03e-06     5576.24     
+11      3.21e-06     19219.9     
+12      3.025e-06    10197.7     
+13      0.00172      38680.8     
+14      3.92e-06     62955.1     
+15      0.04015      159409      
+16      3.27e-06     25130.3     
+
+Min         25%          Med          75%          Max         
+5576.24      24901.8      39833.4      216627       267107      
+H.Mean       H.StdErr    
+28318.1      8484.3      
+Application 23975773 resources: utime ~122s, stime ~34s, Rss ~1957128, inblocks ~18, outblocks ~0
