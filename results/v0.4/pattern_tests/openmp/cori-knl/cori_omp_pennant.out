@@ -1,0 +1,51 @@
+OMP: Warning #181: OMP_PROC_BIND: ignored because KMP_AFFINITY has been defined
+OMP: Warning #181: OMP_PLACES: ignored because KMP_AFFINITY has been defined
+
+Running Spatter version 0.0
+Compiler: SPAT_C_NAME ver. 19.0.0.20190206
+Compiler Location: /opt/cray/pe/craype/2.5.18/bin/cc
+Backend: OPENMP
+Aggregate Results? YES
+
+Run Configurations
+[ {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,4,8,12,16,20,24,28,32,36,40,44,48,52,56,60], 'delta':2, 'length':83333333, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[4,8,12,0,20,24,28,16,36,40,44,32,52,56,60,48], 'delta':2, 'length':83333333, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[6,0,2,4,14,8,10,12,22,16,18,20,30,24,26,28], 'delta':518408, 'length':482, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[2,484,482,0,4,486,484,2,6,488,486,4,8,490,488,6], 'delta':2, 'length':83333333, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,2,484,482,2,4,486,484,4,6,488,486,6,8,490,488], 'delta':2, 'length':83333333, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[482,0,2,484,484,2,4,486,486,4,6,488,488,6,8,490], 'delta':482, 'length':517598, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Scatter', 'pattern':[0,4,8,12,16,20,24,28,32,36,40,44,48,52,56,60], 'delta':1, 'length':125000000, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3], 'delta':388848, 'length':642, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3], 'delta':388848, 'length':642, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[4,8,12,0,20,24,28,16,36,40,44,32,52,56,60,48], 'delta':4, 'length':50000000, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3], 'delta':1882384, 'length':132, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[6,0,2,4,14,8,10,12,22,16,18,20,30,24,26,28], 'delta':518408, 'length':482, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[6,0,2,4,14,8,10,12,22,16,18,20,30,24,26,28], 'delta':1036816, 'length':241, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[482,0,2,484,484,2,4,486,486,4,6,488,488,6,8,490], 'delta':480, 'length':519750, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[2,0,0,0,2,0,0,0,2,0,0,0,2,0,0,0], 'delta':129608, 'length':1928, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3], 'delta':4, 'length':50000000, 'agg':10, 'wrap':1, 'threads':272},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[0,0,0,0,1,1,1,1,2,2,2,2,3,3,3,3], 'delta':388852, 'length':642, 'agg':10, 'wrap':1, 'threads':272} ]
+
+config  time(s)      bw(MB/s)    
+0       0.05213      204600      
+1       0.05234      203792      
+2       2.497e-05    2470.8      
+3       0.05223      204218      
+4       0.05238      203646      
+5       0.0008171    81077.8     
+6       0.08818      181438      
+7       2.416e-05    3401.32     
+8       2.258e-05    3639.33     
+9       0.03139      203887      
+10      2.636e-05    640.995     
+11      2.337e-05    2639.97     
+12      2.511e-05    1228.56     
+13      0.0007027    94677.7     
+14      2.437e-05    10126.5     
+15      0.03178      201409      
+16      2.446e-05    3359.61     
+
+Min         25%          Med          75%          Max         
+640.995      3359.61      81077.8      203646       204600      
+H.Mean       H.StdErr    
+4066.39      1579.3      
