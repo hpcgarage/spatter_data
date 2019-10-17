@@ -34,8 +34,6 @@ for c in configs:
             c['pattern'] = c['pattern'] + (p+i*c['delta']).tolist() 
         c['delta'] = c['delta']*mult
         c['local-work-size'] = block_size
-        print(pat_len)
-        print(len(c['pattern']))
     #c['pattern'] = sort(c['pattern'])
     c['count']   = int(size / ((c['delta']+1) * 8))
 
