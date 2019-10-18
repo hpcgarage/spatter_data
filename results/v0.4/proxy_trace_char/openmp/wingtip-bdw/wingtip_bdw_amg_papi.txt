@@ -1,0 +1,24 @@
+
+Running Spatter version 0.4
+Compiler: SPAT_C_NAME ver. 19.0.0.20190206
+Compiler Location: /opt/intel/bin/icc
+Backend: OPENMP
+Aggregate Results? YES
+
+PAPI Counters: 3
+{ "ctr0":"PAPI_L1_TCM",
+  "ctr1":"PAPI_L2_TCM",
+  "ctr2":"PAPI_L3_TCM" }
+
+Run Configurations
+[ {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[1333,0,1,2,36,37,38,72,73,74,1296,1297,1298,1332,1334,1368], 'delta':1, 'length':1454647, 'agg':10, 'wrap':1, 'threads':1},
+  {'name':'CUSTOM', 'kernel':'Gather', 'pattern':[1333,0,1,36,37,72,73,1296,1297,1332,1368,1369,2592,2593,2628,2629], 'delta':1, 'length':1454647, 'agg':10, 'wrap':1, 'threads':1} ]
+
+config  time(s)      bw(MB/s)     ctr0         ctr1         ctr2        
+0       0.02801      6646.55      203705       183143       226         
+1       0.0236       7890.31      445271       183642       195         
+
+Min         25%          Med          75%          Max         
+6646.55      6646.55      7890.31      7890.31      7890.31     
+H.Mean       H.StdErr    
+7215.22      436.516     
