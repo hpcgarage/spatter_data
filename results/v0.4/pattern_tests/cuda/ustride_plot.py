@@ -12,7 +12,8 @@ import os
 import ntpath
 import math
 
-colors={'tx2':'orange', 'skx':'#26CAD3', 'bdw':'#005596', 'hsw':'#64d1a2', 'p100':'black', 'k40':'blue', 'titan':'purple', 'knl':'green'}
+colors={'tx2':'orange', 'skx':'#26CAD3', 'bdw':'#005596', 'hsw':'#64d1a2', 'p100':'black', 'k40':'blue', 'titan':'purple', 'knl':'green', 'gv100':'mediumvioletred'}
+gpus = ['p100', 'k40', 'titan', 'gv100']
 
 def file_to_df(filename):
     with open(filename, 'r') as file:
@@ -25,7 +26,8 @@ def file_to_df(filename):
     #config['config'] = [i for i in range(config.shape[0])]
 
     # Read data
-    data = pd.read_csv(StringIO(contents[end:]), delim_whitespace=True)
+    stats = contents.find("Min")
+    data = pd.read_csv(StringIO(contents[end:stats]), delim_whitespace=True)
 
     # Join tables and return 
     return data.join(config, on='config', how='inner')
@@ -106,7 +108,7 @@ if __name__ == "__main__":
     df = df[df['kernel'] == kern]
     #print(len(df))
 
-    symbol = {'k40':'v', 'knl':'>', 'p100':'^', 'titan':'<','skx':'d', 'bdw':'p', 'tx2':'D', 'npl':'h','clx':'+'}
+    symbol = {'k40':'v', 'knl':'>', 'p100':'^', 'titan':'<','skx':'d', 'bdw':'p', 'tx2':'D', 'npl':'h','clx':'+', 'gv100':'s'}
 
 
 
@@ -172,7 +174,7 @@ if __name__ == "__main__":
     handles,labels = ax.get_legend_handles_labels()
     #handles = [handles[2], handles[0], handles[1], handles[3]]
     #labels = [labels[2], labels[0], labels[1], labels[3]]
-    remap = {'k40':'K40c', 'knl':'KNL', 'p100':'P100', 'titan':'Titan'}
+    remap = {'k40':'K40c', 'knl':'KNL', 'p100':'P100', 'titan':'Titan', 'gv100':'GV100'}
     labels = [remap[l] for l in labels]
     if kern == "Gather":
         labels.append("25% of peak")
