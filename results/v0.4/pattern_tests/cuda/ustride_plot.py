@@ -12,7 +12,8 @@ import os
 import ntpath
 import math
 
-colors={'tx2':'orange', 'skx':'#26CAD3', 'bdw':'#005596', 'hsw':'#64d1a2', 'p100':'black', 'k40':'blue', 'titan':'purple', 'knl':'green', 'npl':'tomato', 'clx':'darkorchid'}
+colors={'tx2':'orange', 'skx':'#26CAD3', 'bdw':'#005596', 'hsw':'#64d1a2', 'p100':'black', 'k40':'blue', 'titan':'purple', 'knl':'green', 'gv100':'mediumvioletred'}
+gpus = ['p100', 'k40', 'titan', 'gv100']
 
 def file_to_df(filename):
     with open(filename, 'r') as file:
@@ -72,11 +73,23 @@ if __name__ == "__main__":
         tmp = file_to_df(f)
         tmp['arch'] = get_arch(f)
         tmp['gap'] = gap(tmp['name'])
-        tmp = tmp[tmp['kernel']==kern]
+        tmp2 = tmp[tmp['kernel']==kern]
+        if kern == "Gather":
+            percent.append(max(tmp2['bw(MB/s)']) * .25)
+        else:
+            percent.append(max(tmp2['bw(MB/s)']) * .125)
+        maxpc.append(max(tmp2['bw(MB/s)']))
+        minpc.append(min(tmp2['bw(MB/s)']))
         tmp['norm_local'] = tmp['bw(MB/s)'] / max(tmp['bw(MB/s)'])
         tmp['pat_len'] = pat_len(tmp['pattern'])
+        if np.any(tmp['arch'] == 'knl'):
+            knl = tmp.copy()
         dfs.append(tmp)
     df = pd.concat(dfs)
+    print(percent)
+    print(maxpc)
+    print(minpc)
+    print(np.array(minpc)/np.array(maxpc) * 100)
 
 
 # select only vector length 256 for gpu tests
@@ -89,13 +102,27 @@ if __name__ == "__main__":
     #        print(max(t3['bw(MB/s)']))
 
     #exit(0)
+    df = df[df['pat_len'] == 256]
 
     #df = df.append(knl)
     df = df[df['kernel'] == kern]
     #print(len(df))
 
-    symbol = {'k40':'v', 'knl':'>', 'p100':'^', 'titan':'<','skx':'d', 'bdw':'p', 'tx2':'D', 'npl':'h','clx':'+'}
+    symbol = {'k40':'v', 'knl':'>', 'p100':'^', 'titan':'<','skx':'d', 'bdw':'p', 'tx2':'D', 'npl':'h','clx':'+', 'gv100':'s'}
 
+
+
+    #xp = df[df['arch'] == 'titan']
+    #xpa = np.array(xp['bw(MB/s)'])
+    #mmm = max(xpa)
+    #xpa = xpa / mmm * 100
+    #print(xpa)
+    #exit(0)
+
+
+    #print(np.unique(df['gap']))
+
+    df['norm_global'] = df['bw(MB/s)'] / max(df['bw(MB/s)'])
 
     SMALL_SIZE = 15
     MEDIUM_SIZE = 18
@@ -109,8 +136,6 @@ if __name__ == "__main__":
     plt.rc('legend', fontsize=SMALL_SIZE)    # legend fontsize
     plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
 
-    print(df)
-
     #Plot against global max
     fig, ax = plt.subplots()
     for key, grp in df.groupby(['arch']):
@@ -121,6 +146,12 @@ if __name__ == "__main__":
     #    xs = [4, 4, 3.5, 2.4]
     #else:
     #    xs = [2, 1.8, 2.5, 4]
+    if kern == "Gather":
+        xs = [3.5, 4, 4]
+    else:
+        xs = [2.5, 2, 1.8]
+    
+    plt.hlines(percent, xmin=xs, xmax=8, linestyles='dashed', color=['blue', 'black','purple'])
 
     #ax2 = ax.twinx()
     #ax2.set_ylim(3,6)
@@ -134,7 +165,6 @@ if __name__ == "__main__":
 
     #ax.set_xscale("log")
     ax.set_yscale("log")
-    ax.set_ylim(10**2*2, 10**5*2)
     ax.set_ylabel("Log(Bandwidth)")
     ax.set_xlabel("Stride (Doubles)")
 
@@ -144,8 +174,14 @@ if __name__ == "__main__":
     handles,labels = ax.get_legend_handles_labels()
     #handles = [handles[2], handles[0], handles[1], handles[3]]
     #labels = [labels[2], labels[0], labels[1], labels[3]]
-    remap = {'k40':'K40c', 'knl':'KNL', 'p100':'P100', 'titan':'Titan','skx':'SKX', 'bdw':'BDW', 'tx2':'TX2', 'npl':'Naples','clx':'CLX'}
+    remap = {'k40':'K40c', 'knl':'KNL', 'p100':'P100', 'titan':'Titan', 'gv100':'GV100'}
     labels = [remap[l] for l in labels]
+    if kern == "Gather":
+        labels.append("25% of peak")
+    else:
+        labels.append("12.5% of peak")
+
+    handles.append(Line2D([0], [0], color='black', lw=1, dashes=(5,5)))
 
     if kern == "Gather":
         plt.legend(handles, labels, loc='lower left', title='')
@@ -156,10 +192,10 @@ if __name__ == "__main__":
     #plt.rcParams.update({'font.size': 28})
 
     fig.set_size_inches(6,6)
-    outname = "ustride_cpu_{}.png".format(kern.lower())
+    outname = "ustride_gpu_{}.png".format(kern.lower())
     plt.savefig(outname, transparent=True)
     print("wrote to {}".format(outname))
-    outname = "ustride_cpu_{}.pdf".format(kern.lower())
+    outname = "ustride_gpu_{}.pdf".format(kern.lower())
     plt.savefig(outname, transparent=True)
     print("wrote to {}".format(outname))
     exit(0)
