@@ -1,9 +1,7 @@
 #! /bin/sh
 
 # Linux data-gathering commands; adjust as necessary for your platform.
-#
-# Be sure to remove any information from the output that would violate
-# SC's double-blind review policies. 
+# Adapted from the SC environment collection script.
 
 SCRIPT='./'`basename "$0"`
 USAGE='\nUsage: \n  '$SCRIPT' <system_name=ibmpower9>\n\n'
@@ -15,7 +13,7 @@ if [ $# -lt 1 ]; then
 fi
 
 #Each environment should go into a separate file
-OUTFILE="exe_environments/sc19_env_$1.txt"
+OUTFILE="exe_environments/spatter_env_$1.txt"
 
 
 env | sed "s/$USER/USER/g"
@@ -31,5 +29,6 @@ module list &>> ${OUTFILE}
 nvidia-smi &>> ${OUTFILE}
 (lshw -short -quiet -sanitize || lspci) | cat &>> ${OUTFILE}
 
-#Strip any full hostnames from system names; edit to add more domains
-sed -i "s/cc.gatech.edu//g" ${OUTFILE}
+# Strip any full hostnames from system names; edit to add more domains
+# This example removes gatech.edu from any hostnames for instance.
+sed -i "s/gatech.edu//g" ${OUTFILE}

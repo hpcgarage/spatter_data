@@ -56,7 +56,7 @@ def _pat_len(pat):
     return len(pat)
 pat_len = np.vectorize(_pat_len)
 
-kern = 'Scatter'
+kern = 'Gather'
 
 
 if __name__ == "__main__":
@@ -147,11 +147,11 @@ if __name__ == "__main__":
     #else:
     #    xs = [2, 1.8, 2.5, 4]
     if kern == "Gather":
-        xs = [3.5, 4, 4]
+        xs = [3.4, 4, 4, 2]
     else:
-        xs = [2.5, 2, 1.8]
+        xs = [2.5, 1.8, 1.8, 2]
     
-    plt.hlines(percent, xmin=xs, xmax=8, linestyles='dashed', color=['blue', 'black','purple'])
+    plt.hlines(percent, xmin=xs, xmax=8, linestyles='dashed', color=['blue', 'purple','black', 'mediumvioletred'])
 
     #ax2 = ax.twinx()
     #ax2.set_ylim(3,6)
@@ -172,8 +172,10 @@ if __name__ == "__main__":
     ax.set_xticklabels(["$2^{{{}}}$".format(x) for x in range(0,8)])
 
     handles,labels = ax.get_legend_handles_labels()
-    #handles = [handles[2], handles[0], handles[1], handles[3]]
-    #labels = [labels[2], labels[0], labels[1], labels[3]]
+    #order = [1,2,3,0]
+    #order = [0,1,2,3]
+    #plt.legend([handles[idx] for idx in order],[labels[idx] for idx in order])
+    handles,labels = ax.get_legend_handles_labels()
     remap = {'k40':'K40c', 'knl':'KNL', 'p100':'P100', 'titan':'Titan', 'gv100':'GV100'}
     labels = [remap[l] for l in labels]
     if kern == "Gather":
@@ -184,9 +186,9 @@ if __name__ == "__main__":
     handles.append(Line2D([0], [0], color='black', lw=1, dashes=(5,5)))
 
     if kern == "Gather":
-        plt.legend(handles, labels, loc='lower left', title='')
+        plt.legend(handles, labels, loc='best', title='')
     else:
-        plt.legend(handles, labels, loc='lower left', title='')
+        plt.legend(handles, labels, loc='best', title='')
     print(labels)
     #ax2.get_legend().remove()
     #plt.rcParams.update({'font.size': 28})
