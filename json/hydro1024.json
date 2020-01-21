@@ -1,0 +1,1 @@
+[{"pattern": "HYDRO:1024", "kernel": "Gather", "count": 1073741824, "delta": 1}, {"pattern": "HYDRO:200", "kernel": "Gather", "count": 1073741824, "morton": 1, "delta": 1}, {"pattern": "HYDRO:1024", "kernel": "Gather", "count": 1073807361, "morton": 2, "delta": 1}, {"pattern": "HYDRO:1024", "kernel": "Gather", "count": 1073741824, "morton": 3, "delta": 1}]
