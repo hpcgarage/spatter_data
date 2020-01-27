@@ -1,0 +1,45 @@
+[
+    {"pattern":"UNIFORM:512:1:NR", "count":2097152, "local-work-size":1024, "runs":25, "stride":1},
+    {"pattern":"UNIFORM:512:1:NR", "count":2097152, "local-work-size":1024, "runs":25, "morton":0},
+    {"pattern":"UNIFORM:512:1:NR", "count":2097152, "local-work-size":1024, "runs":25, "morton":1},
+
+    {"pattern":"UNIFORM:512:2:NR", "count":1048576, "local-work-size":1024, "runs":25, "stride":2},
+    {"pattern":"UNIFORM:512:2:NR", "count":1048576, "local-work-size":1024, "runs":25, "morton":0},
+    {"pattern":"UNIFORM:512:2:NR", "count":1048576, "local-work-size":1024, "runs":25, "morton":1},
+
+    {"pattern":"UNIFORM:512:4:NR", "count":524288, "local-work-size":1024, "runs":25, "stride":4},
+    {"pattern":"UNIFORM:512:4:NR", "count":524288, "local-work-size":1024, "runs":25, "morton":0},
+    {"pattern":"UNIFORM:512:4:NR", "count":524288, "local-work-size":1024, "runs":25, "morton":1},
+
+    {"pattern":"UNIFORM:512:8:NR", "count":262144, "local-work-size":1024, "runs":25, "stride":8},
+    {"pattern":"UNIFORM:512:8:NR", "count":262144, "local-work-size":1024, "runs":25, "morton":0},
+    {"pattern":"UNIFORM:512:8:NR", "count":262144, "local-work-size":1024, "runs":25, "morton":1},
+
+    {"pattern":"UNIFORM:512:16:NR", "count":131072, "local-work-size":1024, "runs":25, "stride":16},
+    {"pattern":"UNIFORM:512:16:NR", "count":131072, "local-work-size":1024, "runs":25, "morton":0},
+    {"pattern":"UNIFORM:512:16:NR", "count":131072, "local-work-size":1024, "runs":25, "morton":1},
+
+    {"pattern":"UNIFORM:512:32:NR", "count":65536, "local-work-size":1024, "runs":25, "stride":32},
+    {"pattern":"UNIFORM:512:32:NR", "count":65536, "local-work-size":1024, "runs":25, "morton":0},
+    {"pattern":"UNIFORM:512:32:NR", "count":65536, "local-work-size":1024, "runs":25, "morton":1},
+
+    {"pattern":"UNIFORM:512:64:NR", "count":32768, "local-work-size":1024, "runs":25, "stride":64},
+    {"pattern":"UNIFORM:512:64:NR", "count":32768, "local-work-size":1024, "runs":25, "morton":0},
+    {"pattern":"UNIFORM:512:64:NR", "count":32768, "local-work-size":1024, "runs":25, "morton":1},
+
+    {"pattern":"UNIFORM:512:128:NR", "count":16384, "local-work-size":1024, "runs":25, "stride":128},
+    {"pattern":"UNIFORM:512:128:NR", "count":16384, "local-work-size":1024, "runs":25, "morton":0},
+    {"pattern":"UNIFORM:512:128:NR", "count":16384, "local-work-size":1024, "runs":25, "morton":1},
+
+    {"pattern":"UNIFORM:512:256:NR", "count":8192, "local-work-size":1024, "runs":25, "stride":256},
+    {"pattern":"UNIFORM:512:256:NR", "count":8192, "local-work-size":1024, "runs":25, "morton":0},
+    {"pattern":"UNIFORM:512:256:NR", "count":8192, "local-work-size":1024, "runs":25, "morton":1},
+
+    {"pattern":"UNIFORM:512:512:NR", "count":4096, "local-work-size":1024, "runs":25, "stride":512},
+    {"pattern":"UNIFORM:512:512:NR", "count":4096, "local-work-size":1024, "runs":25, "morton":0},
+    {"pattern":"UNIFORM:512:512:NR", "count":4096, "local-work-size":1024, "runs":25, "morton":1},
+
+    {"pattern":"UNIFORM:512:1024:NR", "count":2048, "local-work-size":1024, "runs":25, "stride":1024},
+    {"pattern":"UNIFORM:512:1024:NR", "count":2048, "local-work-size":1024, "runs":25, "morton":0},
+    {"pattern":"UNIFORM:512:1024:NR", "count":2048, "local-work-size":1024, "runs":25, "morton":1}
+]
