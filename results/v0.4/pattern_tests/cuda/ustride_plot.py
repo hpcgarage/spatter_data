@@ -29,7 +29,7 @@ def file_to_df(filename):
     stats = contents.find("Min")
     data = pd.read_csv(StringIO(contents[end:stats]), delim_whitespace=True)
 
-    # Join tables and return 
+    # Join tables and return
     return data.join(config, on='config', how='inner')
 
 def _is_nr(str):
@@ -56,7 +56,7 @@ def _pat_len(pat):
     return len(pat)
 pat_len = np.vectorize(_pat_len)
 
-kern = 'Gather'
+kern = 'Scatter'
 
 
 if __name__ == "__main__":
@@ -93,7 +93,7 @@ if __name__ == "__main__":
 
 
 # select only vector length 256 for gpu tests
-    
+
     #for d in np.unique(df['arch']):
     #    for p in np.unique(df['pat_len']):
     #        t2 = df[df['pat_len'] == p]
@@ -150,7 +150,7 @@ if __name__ == "__main__":
         xs = [3.4, 4, 4, 2]
     else:
         xs = [2.5, 1.8, 1.8, 2]
-    
+
     plt.hlines(percent, xmin=xs, xmax=8, linestyles='dashed', color=['blue', 'purple','black', 'mediumvioletred'])
 
     #ax2 = ax.twinx()
@@ -160,13 +160,12 @@ if __name__ == "__main__":
     #lab = [int(i) for i in (np.array(percent)//1000)]
     #ax2.set_yticklabels(lab)
     #ax2.set_yscale("log")
-    
-
 
     #ax.set_xscale("log")
     ax.set_yscale("log")
-    ax.set_ylabel("Log(Bandwidth)")
+    ax.set_ylabel("Bandwidth (MB/s)")
     ax.set_xlabel("Stride (Doubles)")
+    ax.text(0.2, 0.1, kern, horizontalalignment='center', verticalalignment='center', transform=ax.transAxes, fontsize=20)
 
     ax.xaxis.set_major_formatter(ticker.ScalarFormatter())
     ax.set_xticklabels(["$2^{{{}}}$".format(x) for x in range(0,8)])
