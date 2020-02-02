@@ -4,6 +4,8 @@
 # ARCH=bdw
 # NCPUS=12
 
+# This script should be run from the build directory, i.e. the one containing the spatter executable
+
 # Notes on the hydro512-2.json file
 # THe first test the the natural ordering
 # The tests after that are block size 4, 8, ... 256.
@@ -37,8 +39,13 @@ else
     echo "Running on $NCPUS CPUs"
 fi
 
+echo "============================"
 echo -n "Running Spatter... "
 
 likwid-pin -c N:0-$((NCPUS-1)) -q ./spatter -pFILE=$JSON --papi=perf::L1-DCACHE-LOADS,perf::L1-DCACHE-LOAD-MISSES,perf::LLC-LOADS,perf::LLC-LOAD-MISSES > $OUT
 
 echo "DONE"
+echo "============================"
+
+echo "If the output file looks good, you can move it to the data repo with the follwing command:"
+echo "cp $OUT $DATA/results/v0.4/hydro/"
