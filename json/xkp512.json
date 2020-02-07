@@ -1,0 +1,9 @@
+[{"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "morton": 1, "delta": 1},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "morton": 3, "delta": 1, "mblock":1},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "morton": 3, "delta": 1, "mblock":4},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "morton": 3, "delta": 1, "mblock":8},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "morton": 3, "delta": 1, "mblock":16},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "morton": 3, "delta": 1, "mblock":32},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "morton": 3, "delta": 1, "mblock":64},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "morton": 3, "delta": 1, "mblock":128},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "morton": 3, "delta": 1, "mblock":256}]
