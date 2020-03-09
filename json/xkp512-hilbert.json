@@ -1,0 +1,9 @@
+[{"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "hilbert": 1, "delta": 1},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "hilbert": 3, "delta": 1, "roblock":1},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "hilbert": 3, "delta": 1, "roblock":4},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "hilbert": 3, "delta": 1, "roblock":8},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "hilbert": 3, "delta": 1, "roblock":16},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "hilbert": 3, "delta": 1, "roblock":32},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "hilbert": 3, "delta": 1, "roblock":64},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "hilbert": 3, "delta": 1, "roblock":128},
+ {"pattern": "XKP:512", "kernel": "Gather", "count": 134217728, "hilbert": 3, "delta": 1, "roblock":256}]
