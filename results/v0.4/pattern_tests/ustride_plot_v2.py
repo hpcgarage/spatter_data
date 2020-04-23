@@ -205,11 +205,11 @@ if __name__ == "__main__":
 
     x_space = np.linspace(ulim, llim, 20)
 
-    plt.plot(x_space, x_space, linewidth=.5, color='black', linestyle='dashed')
-    plt.plot(x_space, x_space/2, linewidth=.5, color='black', linestyle='dashed')
-    plt.plot(x_space, x_space/4, linewidth=.5, color='black', linestyle='dashed')
-    plt.plot(x_space, x_space/8, linewidth=.5, color='black', linestyle='dashed')
-    plt.plot(x_space, x_space/16, linewidth=.5, color='black', linestyle='dashed')
+    plt.plot(x_space, x_space, linewidth=.4, color='black', linestyle='dashed')
+    plt.plot(x_space, x_space/2, linewidth=.4, color='black', linestyle='dashed')
+    plt.plot(x_space, x_space/4, linewidth=.4, color='black', linestyle='dashed')
+    plt.plot(x_space, x_space/8, linewidth=.4, color='black', linestyle='dashed')
+    plt.plot(x_space, x_space/16, linewidth=.4, color='black', linestyle='dashed')
 
     plt.text(llim, llim*1.1, 'Full BW', rotation=45, fontsize=8)
     plt.text(llim*2, llim*1.1, '1/2 BW', rotation=45, fontsize=8)

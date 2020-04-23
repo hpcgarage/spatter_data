@@ -35,7 +35,7 @@ COLORS = {
         'hsw':'#64d1a2',
        }
 
-EXPERIMENTS = ['ustride', 'nekbone', 'lulesh', 'amg', 'pennant']
+EXPERIMENTS = {'ustride':'Uniform Stride', 'nekbone':'Nekbone', 'lulesh':'LULESH', 'amg':'AMG', 'pennant':'PENNANT'}
 
 #################################################################
 # NO EDITING IS REQUIRED BEYOND THIS POINT TO ADD NEW PLATFORMS #
@@ -63,7 +63,7 @@ def get_arch(str):
 def get_experiment(str):
     exper = ntpath.basename(os.path.splitext(str)[0])
     exper = exper[:exper.find("_")]
-    if exper not in EXPERIMENTS:
+    if exper not in EXPERIMENTS.keys():
         raise ValueError("Failed to parse experiment from \"" + str + "\"")
     return exper
 
