@@ -2,6 +2,8 @@ import spatter_util as su
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from colour import Color
+from cycler import cycler
 
 ######################### Script Params ###########################
 PLATFORMS = ['bdw', 'npl', 'clx', 'tx2', 'titan', 'p100', 'gv100']
@@ -70,22 +72,37 @@ for g in STRIDES:
             line, = ax.plot([xs[i], xs[i]], [xs[i], ys[i]], color='black', linewidth=.75)
             line.set_dashes([6,4])
 
+
 # Plot application results
 for ex in EXPER.keys():
+
+    # Generate color list for cycler
+    start_color = Color('#00adff')
+    end_color   = Color('#03034f')
+    n_colors    = len(EXPER[ex])
+    #color_list = list(start_color.range_to(end_color, len(EXPER.keys())))
+    color_list = list(start_color.range_to(end_color,n_colors))
+    color_list = [c.hex for c in color_list]
+    color_list = np.repeat(color_list, len(PLATFORMS)+2)
+    ax.set_prop_cycle(cycler('color', color_list))
+    print(color_list)
+
     for con in EXPER[ex]:
         ys = data[(data['experiment'] == ex) & (data['config'] == con)]['bw(MB/s)'].to_numpy()
         if len(ys) == 0:
             print('Warning: ys is length 0. This likely means the experiment+config you are looking for does not use the kernel you specified. Skipping [{},{}].'.format(ex, con))
             continue
         ys = reorder(ys)
-        plt.scatter(xs, ys, s=15, color='blue')
+
+
+        plt.scatter(xs, ys, s=15)
 
         # Used for setting bounds later
         min_ys = min([min_ys, *ys])
         max_ys = max([max_ys, *ys])
 
         for i in range(len(xs)):
-            plt.plot(xs[i:i+2], ys[i:i+2], color='blue', linestyle='solid', linewidth=.75)
+            plt.plot(xs[i:i+2], ys[i:i+2], linestyle='solid', linewidth=.75)
         # Add Line Label
         plt.text(xs[len(xs)-1]*1.1, ys[len(ys)-1]*1.1, "{}-{}".format(su.EXPERIMENTS[ex], con), rotation=45, color='blue')
 
