@@ -15,78 +15,99 @@ def get_varind(pattern):
 get_varind = np.vectorize(get_varind)
 
 data = pd.read_pickle("./pattern_results.pkl")
-data = data.rename(columns={'bw(MB/s)':'bw'})
 
-data_bak = data.copy()
+def get_models(data):
+    data = data.rename(columns={'bw(MB/s)':'bw'})
 
-df_all = pd.DataFrame(columns=['archtype', 'exp', 'kernel', 'param', 'coef', 'pval'])
+    # Add a column with stride-1 (gap-0) bandwidth
+    stride0 = data[data['experiment'] == 'ustride']
+    stride0 = stride0[stride0['gap']==0]
+    gth_s0 = {}
+    sct_s0 = {}
+    for row in stride0.itertuples():
+        if row.kernel == 'Scatter':
+            sct_s0[row.arch] = row.bw
+        else:
+            gth_s0[row.arch] = row.bw
+    s0 = {'Gather':gth_s0, 'Scatter':sct_s0}
 
-#for EXP in ['ustride', 'app', 'nekbone', 'lulesh', 'amg', 'pennant']:
-for EXP in ['ustride', 'app']:
-    for ARCHTYPE in ['CPU', 'GPU']:
-        for KERNEL in ['Gather', 'Scatter']:
+    data['s0'] = data.apply(lambda row: s0[row.kernel][row.arch], axis=1)
 
-            data = data_bak.copy()
-            if EXP == 'app':
-                data = data[data['experiment'] != 'ustride']
-            else:
-                data = data[data['experiment'] == EXP]
+    data_bak = data.copy()
 
-            data = data[data['archtype'] == ARCHTYPE]
-            data = data[data['kernel'] == KERNEL]
+    df_all = pd.DataFrame(columns=['archtype', 'exp', 'kernel', 'param', 'coef', 'pval'])
 
-            if EXP == 'pennant' and ARCHTYPE == 'GPU' and KERNEL == 'Scatter':
-                continue
+    #for EXP in ['ustride', 'app', 'nekbone', 'lulesh', 'amg', 'pennant']:
+    for EXP in ['ustride', 'app']:
+        for ARCHTYPE in ['CPU', 'GPU']:
+            for KERNEL in ['Gather', 'Scatter']:
 
-            if (data.shape[0] == 0):
-                continue
+                data = data_bak.copy()
+                if EXP == 'app':
+                    data = data[data['experiment'] != 'ustride']
+                else:
+                    data = data[data['experiment'] == EXP]
 
-            y = data['bw'].to_numpy()
+                data = data[data['archtype'] == ARCHTYPE]
+                data = data[data['kernel'] == KERNEL]
 
-            # Add some new data to the table.
-            data['window'] = get_window(data['pattern'])
-            data['varind'] = get_varind(data['pattern'])
+                if EXP == 'pennant' and ARCHTYPE == 'GPU' and KERNEL == 'Scatter':
+                    continue
 
-            #urd.gen_and_processurd.process(
-            #print(data.shape)
-            #reuse = np.zeros(data.shape[0])
-            #for ind, row in data.iterrows():
-            #    reuse[ind] = urd.thats_just_mean((row['pattern'], row['delta'], 10))
-            #    if ind > 3:
-            #        break
-            #
-            #print(reuse)
+                if (data.shape[0] == 0):
+                    continue
 
-            #print(data.columns)
-            keys = ['length', 'window', 'delta', 'varind']
-            for key in keys:
-                x = data[key].to_numpy()
-                slope, intercept, r_value, p_value, std_err = stats.linregress(x,y)
-                #print("{} - rsquared - {:.2f}%".format(key, 100*r_value**2))
+                y = data['bw'].to_numpy()
 
-            # Fit the model
-            model = ols("bw ~ delta + length  + window + varind", data).fit()
-            try:
-                anv = anova_lm(model)
-            except:
-                print("broken: " + EXP + " " + ARCHTYPE + " " + KERNEL)
+                # Add some new data to the table.
+                data['window'] = get_window(data['pattern'])
+                data['varind'] = get_varind(data['pattern'])
 
-            coef = model.params.to_numpy()[1:]
-            pval = anv['PR(>F)'].to_numpy()[:4]
+                #urd.gen_and_processurd.process(
+                #print(data.shape)
+                #reuse = np.zeros(data.shape[0])
+                #for ind, row in data.iterrows():
+                #    reuse[ind] = urd.thats_just_mean((row['pattern'], row['delta'], 10))
+                #    if ind > 3:
+                #        break
+                #
+                #print(reuse)
 
-            vals = np.stack([coef, pval]).transpose()
+                #print(data.columns)
+                #keys = ['length', 'window', 'delta', 'varind', 's0']
+                #keys = ['window', 'delta', 'varind', 's0']
+                keys = ['delta', 'window', 'varind']
+                for key in keys:
+                    x = data[key].to_numpy()
+                    slope, intercept, r_value, p_value, std_err = stats.linregress(x,y)
+                    #print("{} - rsquared - {:.2f}%".format(key, 100*r_value**2))
 
-            df = pd.DataFrame(vals, columns=['coef', 'pval'])
-            df['param'] = keys
-            df['exp'] = EXP
-            df['archtype'] = ARCHTYPE
-            df['kernel'] = KERNEL
-            df = df[['archtype', 'exp', 'kernel', 'param', 'coef', 'pval']]
-            #print(EXP, ARCHTYPE, KERNEL)
-            #print(df)
-            df_all = df_all.append(df)
+                # Fit the model
+                #model = ols("bw ~ delta + window + varind + s0", data).fit()
+                model = ols("bw ~ delta + window + varind", data).fit()
+                try:
+                    anv = anova_lm(model)
+                except:
+                    print("broken: " + EXP + " " + ARCHTYPE + " " + KERNEL)
 
-print(df_all)
+                coef = model.params.to_numpy()[1:]
+                pval = anv['PR(>F)'].to_numpy()[:len(keys)]
 
+                vals = np.stack([coef, pval]).transpose()
+
+                df = pd.DataFrame(vals, columns=['coef', 'pval'])
+                df['param'] = keys
+                df['exp'] = EXP
+                df['archtype'] = ARCHTYPE
+                df['kernel'] = KERNEL
+                df = df[['archtype', 'exp', 'kernel', 'param', 'coef', 'pval']]
+                #print(EXP, ARCHTYPE, KERNEL)
+                #print(df)
+                df_all = df_all.append(df)
+
+
+    return(df_all)
+
+print(get_models(data))
 
 
