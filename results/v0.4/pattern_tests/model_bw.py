@@ -14,7 +14,6 @@ def get_varind(pattern):
     return np.var(pattern[0:16])
 get_varind = np.vectorize(get_varind)
 
-data = pd.read_pickle("./pattern_results.pkl")
 
 def get_models(data):
     data = data.rename(columns={'bw(MB/s)':'bw'})
@@ -32,7 +31,11 @@ def get_models(data):
     s0 = {'Gather':gth_s0, 'Scatter':sct_s0}
 
     data['s0'] = data.apply(lambda row: s0[row.kernel][row.arch], axis=1)
+    data['window'] = get_window(data['pattern'])
+    data['varind'] = get_varind(data['pattern'])
 
+    #data.to_pickle("pattern_results_ext.pkl")
+    #exit()
     data_bak = data.copy()
 
     df_all = pd.DataFrame(columns=['archtype', 'exp', 'kernel', 'param', 'coef', 'pval'])
@@ -59,10 +62,6 @@ def get_models(data):
 
                 y = data['bw'].to_numpy()
 
-                # Add some new data to the table.
-                data['window'] = get_window(data['pattern'])
-                data['varind'] = get_varind(data['pattern'])
-
                 #urd.gen_and_processurd.process(
                 #print(data.shape)
                 #reuse = np.zeros(data.shape[0])
@@ -74,9 +73,16 @@ def get_models(data):
                 #print(reuse)
 
                 #print(data.columns)
-                #keys = ['length', 'window', 'delta', 'varind', 's0']
+                all_keys = ['length', 'window', 'delta', 'varind', 's0']
                 #keys = ['window', 'delta', 'varind', 's0']
-                keys = ['delta', 'window', 'varind']
+
+                print(EXP, ARCHTYPE, KERNEL)
+                for key in all_keys:
+                    x = data[key].to_numpy()
+                    print("\t{} {:.2f} {:.2f} {:.2f} {:.2f}".format(key, np.min(x), np.mean(x), np.max(x), np.std(x)))
+
+
+                keys = ['delta', 'window' ]
                 for key in keys:
                     x = data[key].to_numpy()
                     slope, intercept, r_value, p_value, std_err = stats.linregress(x,y)
@@ -84,7 +90,7 @@ def get_models(data):
 
                 # Fit the model
                 #model = ols("bw ~ delta + window + varind + s0", data).fit()
-                model = ols("bw ~ delta + window + varind", data).fit()
+                model = ols("bw ~ delta + window ", data).fit()
                 try:
                     anv = anova_lm(model)
                 except:
@@ -108,6 +114,6 @@ def get_models(data):
 
     return(df_all)
 
+data = pd.read_pickle("./pattern_results.pkl")
 print(get_models(data))
-
 

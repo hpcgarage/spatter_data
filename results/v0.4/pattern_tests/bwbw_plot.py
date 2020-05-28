@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from colour import Color
 from cycler import cycler
+import model_bw as model
 
 ######################### Script Params ###########################
 PLATFORMS = ['bdw', 'npl', 'clx', 'tx2', 'titan', 'p100', 'gv100']
@@ -16,6 +17,12 @@ KERNEL    = 'Gather'
 ORDER = []
 min_ys = [np.inf]
 max_ys = [0]
+
+USTRIDE_LINES=1
+USTRIDE_DASHES=.75
+USTRIDE_POINTS=5
+APP_LINES=1
+APP_POINTS=5
 
 def set_order(ord):
     global ORDER
@@ -34,6 +41,8 @@ def member(a):
 member = np.vectorize(member)
 data = data[member(list(data['arch']))]
 data = data[data['kernel'] == KERNEL]
+
+models = model.get_models(data)
 
 # We need to plot uniform stride results first
 ustride = data[data['experiment'] == 'ustride']
@@ -65,7 +74,7 @@ for g in STRIDES:
 
     # Plot lines connecting points
     for i in range(len(xs)):
-        plt.plot(xs[i:i+2], ys[i:i+2], color='black', linestyle='solid', linewidth=.75)
+        plt.plot(xs[i:i+2], ys[i:i+2], color='black', linestyle='solid', linewidth=1)
     # Plot line connecting stride MAX with stride 0
     if g == max(STRIDES):
         for i in range(len(xs)):
@@ -84,8 +93,8 @@ for ex in EXPER.keys():
     color_list = list(start_color.range_to(end_color,n_colors))
     color_list = [c.hex for c in color_list]
     color_list = np.repeat(color_list, len(PLATFORMS)+2)
-    ax.set_prop_cycle(cycler('color', color_list))
-    print(color_list)
+    #ax.set_prop_cycle(cycler('color', color_list))
+    #print(color_list)
 
     for con in EXPER[ex]:
         ys = data[(data['experiment'] == ex) & (data['config'] == con)]['bw(MB/s)'].to_numpy()
@@ -95,14 +104,14 @@ for ex in EXPER.keys():
         ys = reorder(ys)
 
 
-        plt.scatter(xs, ys, s=15)
+        plt.scatter(xs, ys, s=5, color = 'blue')
 
         # Used for setting bounds later
         min_ys = min([min_ys, *ys])
         max_ys = max([max_ys, *ys])
 
         for i in range(len(xs)):
-            plt.plot(xs[i:i+2], ys[i:i+2], linestyle='solid', linewidth=.75)
+            plt.plot(xs[i:i+2], ys[i:i+2], linestyle='solid', linewidth=.5, color='blue')
         # Add Line Label
         plt.text(xs[len(xs)-1]*1.1, ys[len(ys)-1]*1.1, "{}-{}".format(su.EXPERIMENTS[ex], con), rotation=45, color='blue')
 
