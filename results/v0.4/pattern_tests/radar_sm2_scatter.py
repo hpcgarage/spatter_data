@@ -7,6 +7,7 @@ import string
 #plt.style.use('ggplot')
 
 # Filename
+kernel = 'scatter'
 outfile = 'sm2_scatter.pdf'
 
 # Figure params
@@ -48,6 +49,12 @@ def small_plot(ax, xs, title, max_y, col, label='', app='', names=[], no_color=F
 
 
     # Title
+    if title != '':
+        if kernel == 'Gather':
+            title = 'G{}'.format(title)
+        else:
+            title = 'S{}'.format(title)
+
     ax.set_title(title, fontsize=8, y=.90)
 
     # Plot image
@@ -97,7 +104,6 @@ def small_plot(ax, xs, title, max_y, col, label='', app='', names=[], no_color=F
     ax.grid(alpha=0)
     #ax.set_axis_off()
 
-kernel = 'scatter'
 ABS=False
 if ABS:
     data_in = pd.read_pickle('./radar_data_{}_abs.pkl'.format(kernel))
@@ -133,6 +139,7 @@ for a in apps:
     for c in col:
         if a in c:
             rename_dict[c] = str(ind)
+            print('{} becomes {}'.format( c, ind))
             ind = ind + 1
         else:
             rename_dict[c] = c
