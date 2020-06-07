@@ -4,13 +4,55 @@ import numpy as np
 import matplotlib.pyplot as plt
 from colour import Color
 from cycler import cycler
-import model_bw as model
+#import model_bw as model
 
 ######################### Script Params ###########################
 PLATFORMS = ['bdw', 'npl', 'clx', 'tx2', 'titan', 'p100', 'gv100']
 STRIDES   = [0, 4]
-EXPER     = {'pennant': [2, 5, 14]}
-KERNEL    = 'Gather'
+#EXPER     = {'pennant': [2, 5, 14,10]} # Gather
+#KERNEL    = 'Gather'
+EXPER     = {'lulesh':[0,3]} # Scatter
+KERNEL    = 'Scatter'
+###################################################################
+
+############################ RENAME ###############################
+rename = {'pennant-006':'PENNANT-S0',
+          'lulesh-000':'LULESH-S3',
+          'lulesh-002':'LULESH-S1',
+          'lulesh-003':'LULESH-S0',
+          'lulesh-007':'LULESH-S2',
+          'pennant-000' : 'PENNANT-G2',
+          'pennant-001' : 'PENNANT-G3',
+          'pennant-002' : 'PENNANT-G12',
+          'pennant-003' : 'PENNANT-G0',
+          'pennant-004' : 'PENNANT-G1',
+          'pennant-005' : 'PENNANT-G7',
+          'pennant-007' : 'PENNANT-G11',
+          'pennant-008' : 'PENNANT-G9',
+          'pennant-009' : 'PENNANT-G5',
+          'pennant-010' : 'PENNANT-G15',
+          'pennant-011' : 'PENNANT-G13',
+          'pennant-012' : 'PENNANT-G14',
+          'pennant-013' : 'PENNANT-G6',
+          'pennant-014' : 'PENNANT-G8',
+          'pennant-015' : 'PENNANT-G4',
+          'pennant-016' : 'PENNANT-G10',
+          'lulesh-001' : 'LULESH-G2',
+          'lulesh-004' : 'LULESH-G3',
+          'lulesh-005' : 'LULESH-G6',
+          'lulesh-006' : 'LULESH-G4',
+          'lulesh-008' : 'LULESH-G0',
+          'lulesh-009' : 'LULESH-G7',
+          'lulesh-010' : 'LULESH-G1',
+          'lulesh-011' : 'LULESH-G5',
+          'nekbone-000' : 'NEKBONE-G1',
+          'nekbone-001' : 'NEKBONE-G0',
+          'nekbone-002' : 'NEKBONE-G2',
+          'amg-000' : 'AMG-G0',
+          'amg-001' : 'AMG-G1',
+          }
+
+
 ###################################################################
 
 ## Globals
@@ -42,7 +84,7 @@ member = np.vectorize(member)
 data = data[member(list(data['arch']))]
 data = data[data['kernel'] == KERNEL]
 
-models = model.get_models(data)
+#models = model.get_models(data)
 
 # We need to plot uniform stride results first
 ustride = data[data['experiment'] == 'ustride']
@@ -110,10 +152,13 @@ for ex in EXPER.keys():
         min_ys = min([min_ys, *ys])
         max_ys = max([max_ys, *ys])
 
+        label = '{}-{:03d}'.format(su.EXPERIMENTS[ex], con).lower()
+        con_remap = rename[label]
+
         for i in range(len(xs)):
-            plt.plot(xs[i:i+2], ys[i:i+2], linestyle='solid', linewidth=.5, color='blue')
+            plt.plot(xs[i:i+2], ys[i:i+2], linestyle='solid', linewidth=.6, color='blue')
         # Add Line Label
-        plt.text(xs[len(xs)-1]*1.1, ys[len(ys)-1]*1.1, "{}-{}".format(su.EXPERIMENTS[ex], con), rotation=45, color='blue')
+        plt.text(xs[len(xs)-1]*1.1, ys[len(ys)-1]*1.1, con_remap, rotation=45, color='blue')
 
 ###########
 # Visuals #
@@ -152,7 +197,7 @@ else:
 plt.suptitle('Uniform Stride Bandwidth{}'.format(app_str))
 
 # Subtitle
-plt.title('{} Bandwidths'.format(KERNEL), fontsize=10, y=1.04)
+plt.title('Selected {} Patterns'.format(KERNEL), fontsize=10, y=1.04)
 
 # Ticks
 plt.minorticks_off()
@@ -187,7 +232,8 @@ plt.text(llim*16*.9, llim*1.0, '1/16', rotation=45, fontsize=8)
 # Save File #
 #############
 
+fig.tight_layout()
 fig.set_size_inches(6, 6)
-outname = "bwbw_tmp.png"
+outname = "bwbw_{}.png".format(KERNEL)
 plt.savefig(outname)
 print('worte to {}'.format(outname))
