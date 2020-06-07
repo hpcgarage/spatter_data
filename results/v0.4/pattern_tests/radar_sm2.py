@@ -105,6 +105,12 @@ else:
     data_in = pd.read_pickle('./radar_data_{}.pkl'.format(kernel))
 
 data = data_in
+
+# Reorder rows
+data = data.set_index('arch', drop=False)
+data = data.reindex(['bdw', 'skx', 'clx', 'knl', 'tx2', 'npl', 'k40', 'titan', 'p100', 'gv100'])
+
+
 patterns = [*data.columns][3:]
 max_y = max(data_in[patterns].to_numpy().flatten())
 print('The max_y value is {}'.format(max_y))
@@ -143,7 +149,6 @@ for a in apps:
     print('Renaming {} patterns as follows'.format(a))
     print(sorter)
     data_dict[a] = data_dict[a].rename(columns=sorter)
-    #print(sort_dict)
 
 
 fig, ax_all =  plt.subplots()
