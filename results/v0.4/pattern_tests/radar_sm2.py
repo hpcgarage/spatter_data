@@ -11,6 +11,7 @@ outfile = 'sm2_gather.pdf'
 
 #Kernel
 kernel = 'gather'
+prefix = 'G'
 
 # Figure params
 figsize=[8.5,11] # width, height in inches
@@ -133,14 +134,16 @@ data_dict = {}
 for a in apps:
     data_dict[a] = data[head_cols + pat_dict[a]]
 
+all_rename = {}
 for a in apps:
     col = data_dict[a].columns
     rename_dict = {}
+    remap2 = {}
     ind = 0
     for c in col:
         if a in c:
             rename_dict[c] = str(ind)
-            print('{} becomes {}'.format( c, ind))
+            remap2[c] = str(ind)
             ind = ind + 1
         else:
             rename_dict[c] = c
@@ -154,10 +157,14 @@ for a in apps:
     sorter = {}
     for i in range(ind):
         sorter[str(k1[i])] = str(i)
-    print('Renaming {} patterns as follows'.format(a))
-    print(sorter)
+    #print(sorter)
+    full_rename = {}
+    for pat in remap2:
+        full_rename[pat] = '{}-{}{}'.format(a.upper(), prefix, sorter[remap2[pat]])
+    all_rename.update(full_rename)
     data_dict[a] = data_dict[a].rename(columns=sorter)
-
+print('Renaming patterns as follows')
+print(all_rename)
 
 fig, ax_all =  plt.subplots()
 fig.set_size_inches(figsize)

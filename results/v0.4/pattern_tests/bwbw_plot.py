@@ -16,42 +16,42 @@ KERNEL    = 'Scatter'
 ###################################################################
 
 ############################ RENAME ###############################
-rename = {'pennant-006':'PENNANT-S0',
-          'lulesh-000':'LULESH-S3',
-          'lulesh-002':'LULESH-S1',
-          'lulesh-003':'LULESH-S0',
-          'lulesh-007':'LULESH-S2',
-          'pennant-000' : 'PENNANT-G2',
-          'pennant-001' : 'PENNANT-G3',
-          'pennant-002' : 'PENNANT-G12',
-          'pennant-003' : 'PENNANT-G0',
-          'pennant-004' : 'PENNANT-G1',
-          'pennant-005' : 'PENNANT-G7',
-          'pennant-007' : 'PENNANT-G11',
-          'pennant-008' : 'PENNANT-G9',
-          'pennant-009' : 'PENNANT-G5',
-          'pennant-010' : 'PENNANT-G15',
-          'pennant-011' : 'PENNANT-G13',
-          'pennant-012' : 'PENNANT-G14',
-          'pennant-013' : 'PENNANT-G6',
-          'pennant-014' : 'PENNANT-G8',
-          'pennant-015' : 'PENNANT-G4',
-          'pennant-016' : 'PENNANT-G10',
-          'lulesh-001' : 'LULESH-G2',
-          'lulesh-004' : 'LULESH-G3',
-          'lulesh-005' : 'LULESH-G6',
-          'lulesh-006' : 'LULESH-G4',
-          'lulesh-008' : 'LULESH-G0',
-          'lulesh-009' : 'LULESH-G7',
-          'lulesh-010' : 'LULESH-G1',
-          'lulesh-011' : 'LULESH-G5',
-          'nekbone-000' : 'NEKBONE-G1',
-          'nekbone-001' : 'NEKBONE-G0',
-          'nekbone-002' : 'NEKBONE-G2',
-          'amg-000' : 'AMG-G0',
-          'amg-001' : 'AMG-G1',
-          }
-
+# gather
+rename = {'pennant-000': 'PENNANT-G2',
+ 'pennant-001': 'PENNANT-G3',
+ 'pennant-002': 'PENNANT-G12',
+ 'pennant-003': 'PENNANT-G0',
+ 'pennant-004': 'PENNANT-G1',
+ 'pennant-005': 'PENNANT-G7',
+ 'pennant-007': 'PENNANT-G11',
+ 'pennant-008': 'PENNANT-G10',
+ 'pennant-009': 'PENNANT-G5',
+ 'pennant-010': 'PENNANT-G15',
+ 'pennant-011': 'PENNANT-G13',
+ 'pennant-012': 'PENNANT-G14',
+ 'pennant-013': 'PENNANT-G6',
+ 'pennant-014': 'PENNANT-G8',
+ 'pennant-015': 'PENNANT-G4',
+ 'pennant-016': 'PENNANT-G9',
+ 'lulesh-001': 'LULESH-G2',
+ 'lulesh-004': 'LULESH-G4',
+ 'lulesh-005': 'LULESH-G6',
+ 'lulesh-006': 'LULESH-G3',
+ 'lulesh-008': 'LULESH-G1',
+ 'lulesh-009': 'LULESH-G7',
+ 'lulesh-010': 'LULESH-G0',
+ 'lulesh-011': 'LULESH-G5',
+ 'nekbone-000': 'NEKBONE-G0',
+ 'nekbone-001': 'NEKBONE-G2',
+ 'nekbone-002': 'NEKBONE-G1',
+ 'amg-000': 'AMG-G1',
+ 'amg-001': 'AMG-G0'}
+# scatter
+rename.update({'pennant-006': 'PENNANT-S0',
+ 'lulesh-000': 'LULESH-S3',
+ 'lulesh-002': 'LULESH-S0',
+ 'lulesh-003': 'LULESH-S1',
+ 'lulesh-007': 'LULESH-S2'})
 
 ###################################################################
 
@@ -65,6 +65,15 @@ USTRIDE_DASHES=.75
 USTRIDE_POINTS=5
 APP_LINES=1
 APP_POINTS=5
+
+USTRIDE_POINT_SIZE=10
+USTRIDE_DASHED_LINE_WIDTH=.4
+USTRIDE_SOLID_LINE_WIDTH=1
+USTRIDE_COLOR='#424242'
+
+APP_POINT_SIZE=13
+APP_LINE_WIDTH=1.5
+APP_COLOR='blue'
 
 def set_order(ord):
     global ORDER
@@ -105,22 +114,22 @@ names = reorder(names)
 for g in STRIDES:
     ys = ustride[ustride['gap'] == g]['bw(MB/s)'].to_numpy()
     ys = reorder(ys)
-    plt.scatter(xs, ys, s=15, color='black')
+    plt.scatter(xs, ys, s=USTRIDE_POINT_SIZE, color=USTRIDE_COLOR)
 
     # Used for setting bounds later
     min_ys = min([min_ys, *ys])
     max_ys = max([max_ys, *ys])
 
     # Add Line Label
-    plt.text(xs[len(xs)-1]*1.1, ys[len(ys)-1]*1.1, "Stride-{}".format(2**g), rotation=45)
+    plt.text(xs[len(xs)-1]*1.1, ys[len(ys)-1]*1.1, "Stride-{}".format(2**g), rotation=45, color=USTRIDE_COLOR)
 
     # Plot lines connecting points
     for i in range(len(xs)):
-        plt.plot(xs[i:i+2], ys[i:i+2], color='black', linestyle='solid', linewidth=1)
+        plt.plot(xs[i:i+2], ys[i:i+2], color=USTRIDE_COLOR, linestyle='solid', linewidth=USTRIDE_SOLID_LINE_WIDTH)
     # Plot line connecting stride MAX with stride 0
     if g == max(STRIDES):
         for i in range(len(xs)):
-            line, = ax.plot([xs[i], xs[i]], [xs[i], ys[i]], color='black', linewidth=.75)
+            line, = ax.plot([xs[i], xs[i]], [xs[i], ys[i]], color=USTRIDE_COLOR, linewidth=USTRIDE_DASHED_LINE_WIDTH)
             line.set_dashes([6,4])
 
 
@@ -146,7 +155,7 @@ for ex in EXPER.keys():
         ys = reorder(ys)
 
 
-        plt.scatter(xs, ys, s=5, color = 'blue')
+        plt.scatter(xs, ys, s=APP_POINT_SIZE, color = APP_COLOR)
 
         # Used for setting bounds later
         min_ys = min([min_ys, *ys])
@@ -156,9 +165,9 @@ for ex in EXPER.keys():
         con_remap = rename[label]
 
         for i in range(len(xs)):
-            plt.plot(xs[i:i+2], ys[i:i+2], linestyle='solid', linewidth=.6, color='blue')
+            plt.plot(xs[i:i+2], ys[i:i+2], linestyle='solid', linewidth=APP_LINE_WIDTH, color=APP_COLOR)
         # Add Line Label
-        plt.text(xs[len(xs)-1]*1.1, ys[len(ys)-1]*1.1, con_remap, rotation=45, color='blue')
+        plt.text(xs[len(xs)-1]*1.1, ys[len(ys)-1]*1.1, con_remap, rotation=45, color=APP_COLOR)
 
 ###########
 # Visuals #
@@ -234,6 +243,6 @@ plt.text(llim*16*.9, llim*1.0, '1/16', rotation=45, fontsize=8)
 
 fig.tight_layout()
 fig.set_size_inches(6, 6)
-outname = "bwbw_{}.png".format(KERNEL)
+outname = "bwbw_{}.pdf".format(KERNEL)
 plt.savefig(outname)
 print('worte to {}'.format(outname))

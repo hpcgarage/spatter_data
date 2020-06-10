@@ -1,40 +1,41 @@
 import pandas as pd
 
-rename = {'pennant-006':'PENNANT-S0',
-          'lulesh-000':'LULESH-S3',
-          'lulesh-002':'LULESH-S1',
-          'lulesh-003':'LULESH-S0',
-          'lulesh-007':'LULESH-S2',
-          'pennant-000' : 'PENNANT-G2',
-          'pennant-001' : 'PENNANT-G3',
-          'pennant-002' : 'PENNANT-G12',
-          'pennant-003' : 'PENNANT-G0',
-          'pennant-004' : 'PENNANT-G1',
-          'pennant-005' : 'PENNANT-G7',
-          'pennant-007' : 'PENNANT-G11',
-          'pennant-008' : 'PENNANT-G9',
-          'pennant-009' : 'PENNANT-G5',
-          'pennant-010' : 'PENNANT-G15',
-          'pennant-011' : 'PENNANT-G13',
-          'pennant-012' : 'PENNANT-G14',
-          'pennant-013' : 'PENNANT-G6',
-          'pennant-014' : 'PENNANT-G8',
-          'pennant-015' : 'PENNANT-G4',
-          'pennant-016' : 'PENNANT-G10',
-          'lulesh-001' : 'LULESH-G2',
-          'lulesh-004' : 'LULESH-G3',
-          'lulesh-005' : 'LULESH-G6',
-          'lulesh-006' : 'LULESH-G4',
-          'lulesh-008' : 'LULESH-G0',
-          'lulesh-009' : 'LULESH-G7',
-          'lulesh-010' : 'LULESH-G1',
-          'lulesh-011' : 'LULESH-G5',
-          'nekbone-000' : 'NEKBONE-G1',
-          'nekbone-001' : 'NEKBONE-G0',
-          'nekbone-002' : 'NEKBONE-G2',
-          'amg-000' : 'AMG-G1',
-          'amg-001' : 'AMG-G0',
-          }
+# gather
+rename = {'pennant-000': 'PENNANT-G2',
+ 'pennant-001': 'PENNANT-G3',
+ 'pennant-002': 'PENNANT-G12',
+ 'pennant-003': 'PENNANT-G0',
+ 'pennant-004': 'PENNANT-G1',
+ 'pennant-005': 'PENNANT-G7',
+ 'pennant-007': 'PENNANT-G11',
+ 'pennant-008': 'PENNANT-G10',
+ 'pennant-009': 'PENNANT-G5',
+ 'pennant-010': 'PENNANT-G15',
+ 'pennant-011': 'PENNANT-G13',
+ 'pennant-012': 'PENNANT-G14',
+ 'pennant-013': 'PENNANT-G6',
+ 'pennant-014': 'PENNANT-G8',
+ 'pennant-015': 'PENNANT-G4',
+ 'pennant-016': 'PENNANT-G9',
+ 'lulesh-001': 'LULESH-G2',
+ 'lulesh-004': 'LULESH-G4',
+ 'lulesh-005': 'LULESH-G6',
+ 'lulesh-006': 'LULESH-G3',
+ 'lulesh-008': 'LULESH-G1',
+ 'lulesh-009': 'LULESH-G7',
+ 'lulesh-010': 'LULESH-G0',
+ 'lulesh-011': 'LULESH-G5',
+ 'nekbone-000': 'NEKBONE-G0',
+ 'nekbone-001': 'NEKBONE-G2',
+ 'nekbone-002': 'NEKBONE-G1',
+ 'amg-000': 'AMG-G1',
+ 'amg-001': 'AMG-G0'}
+# scatter
+rename.update({'pennant-006': 'PENNANT-S0',
+ 'lulesh-000': 'LULESH-S3',
+ 'lulesh-002': 'LULESH-S0',
+ 'lulesh-003': 'LULESH-S1',
+ 'lulesh-007': 'LULESH-S2'})
 
 reindex = ['bdw', 'skx', 'clx', 'knl', 'npl', 'tx2', 'k40', 'titan', 'p100', 'gv100']
 
@@ -63,3 +64,4 @@ gather.to_pickle('pkl/app_gather_pct.pkl')
 scatter.to_pickle('pkl/app_scatter_pct.pkl')
 gather_abs.to_pickle('pkl/app_gather_abs.pkl')
 scatter_abs.to_pickle('pkl/app_scatter_abs.pkl')
+
