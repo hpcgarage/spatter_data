@@ -53,11 +53,11 @@ CPU_FILES = [
         'openmp/cori-knl/amg_knl.txt',
         'openmp/cori-knl/lulesh_knl.txt',
 
-        'openmp/pe24clx-clx/ustride_clx.txt',
-        'openmp/pe24clx-clx/pennant_clx.txt',
-        'openmp/pe24clx-clx/nekbone_clx.txt',
-        'openmp/pe24clx-clx/amg_clx.txt',
-        'openmp/pe24clx-clx/lulesh_clx.txt',
+        'openmp/kay-clx/ustride_clx.txt',
+        'openmp/kay-clx/pennant_clx.txt',
+        'openmp/kay-clx/nekbone_clx.txt',
+        'openmp/kay-clx/amg_clx.txt',
+        'openmp/kay-clx/lulesh_clx.txt',
 
         'openmp/pe23vega-npl/ustride_npl.txt',
         'openmp/pe23vega-npl/pennant_npl.txt',
