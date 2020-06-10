@@ -261,6 +261,6 @@ for i in range(n_pats['lulesh']):
         irow = irow + 2
         count_row = count_row + 1
 
-fig.suptitle('Scater Patterns on CPUs and GPUs', y=.99, fontsize=15)
+fig.suptitle('Scatter Patterns on CPUs and GPUs', y=.99, fontsize=14, x=.475)
 plt.savefig(fname=outfile)
 print('wrote to ', outfile)
