@@ -43,7 +43,15 @@ data = data[keep]
 data_gather = data[data['kernel'] == 'Gather']
 data_scatter = data[data['kernel'] == 'Scatter']
 
-data = data_scatter
+kernel = 'gather'
+
+if kernel == 'scatter':
+    data = data_scatter
+    outfile = 'radar_data_scatter.pkl'
+else:
+    data = data_gather
+    outfile = 'radar_data_gather.pkl'
+
 
 def pattern_name(app, config):
     return '{}-{:0>3d}'.format(app, config)
@@ -84,7 +92,8 @@ for pattern in patterns[1:]:
 
 print(data2)
 
-data2.to_pickle('radar_data_scatter.pkl')
+data2.to_pickle(outfile)
+print('wrote to {}'.format(outfile))
 
 # Exit early before old code
 exit()
