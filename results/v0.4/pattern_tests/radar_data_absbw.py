@@ -43,7 +43,7 @@ data = data[keep]
 data_gather = data[data['kernel'] == 'Gather']
 data_scatter = data[data['kernel'] == 'Scatter']
 
-kernel = 'scatter'
+kernel = 'gather'
 
 if kernel == 'scatter':
     data = data_scatter

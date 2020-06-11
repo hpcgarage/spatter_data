@@ -23,27 +23,23 @@ data['log2_window'] = np.log2(data['window'])
 data['log2_delta'] = np.sign(data['delta'])*np.log2(np.abs(1+data['delta']))
 
 keep = ['kernel', 'experiment', 'archtype', 'pct', 'pct_log2', 'log2_bw', 'log2_len', 'log2_window', 'log2_delta', 'log2_var', 'config', 'arch']
+
 data = data[keep]
 
-#print(np.count_nonzero(data['log2_delta'] <= np.abs(data['log2_delta'])))
-#data = data[data['log2_window'] <= np.abs(data['log2_delta'])]
-#print(data)
+def pattern_name(app, config):
+    return '{}-{:0>3d}'.format(app, config)
 
-#for row in data.itertuples():
-#    print(row.experiment)
-#    if row.experiment != 'app':
-#        print(row.log2_bw)
-#        exit()
+data['pattern_name'] = data.apply(lambda row: pattern_name(row.experiment, row.config), axis=1)
+
+## Also comment out the data=data[keep] line above lol
+#data.to_pickle('table_gen.pkl')
+#print('wrote to {}'.format('table_gen.pkl'))
 #exit()
-
-# Repurpose experiment column
-#data = data[(data['experiment'] == 'ustride') | (data['experiment'] == 'amg')]
-#data['experiment'] = data.apply(lambda row: is_app(row.experiment), axis=1)
 
 data_gather = data[data['kernel'] == 'Gather']
 data_scatter = data[data['kernel'] == 'Scatter']
 
-kernel = 'gather'
+kernel = 'scater'
 
 if kernel == 'scatter':
     data = data_scatter
@@ -53,10 +49,8 @@ else:
     outfile = 'radar_data_gather.pkl'
 
 
-def pattern_name(app, config):
-    return '{}-{:0>3d}'.format(app, config)
 
-data['pattern_name'] = data.apply(lambda row: pattern_name(row.experiment, row.config), axis=1)
+
 
 #print(data['pattern_name'])
 
